@@ -7,5 +7,5 @@ export const tsup: Options = {
   minify: true,
   format: ['cjs', 'esm'],
   dts: true,
-  entryPoints: ['src/cli.ts'],
+  entryPoints: ['src/cli/index.ts', 'src/index.ts'],
 };

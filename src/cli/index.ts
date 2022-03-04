@@ -1,7 +1,7 @@
 import cac from 'cac';
 
 import { generate } from './generate';
-import { version } from '../package.json';
+import { version } from '../../package.json';
 
 const cli = cac();
 

@@ -6,13 +6,18 @@
   "module": "./dist/cli.mjs",
   "exports": {
     ".": {
-      "require": "./dist/cli.js",
-      "import": "./dist/cli.mjs",
-      "types": "./dist/cli.d.ts"
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./cli": {
+      "require": "./dist/cli/index.js",
+      "import": "./dist/cli/index.mjs",
+      "types": "./dist/cli/index.d.ts"
     }
   },
   "bin": {
-    "msw-auto-mock": "./bin/cli.js"
+    "msw-auto-mock": "./bin/cli/index.js"
   },
   "scripts": {
     "build": "tsup",
