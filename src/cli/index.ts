@@ -16,8 +16,8 @@ cli
     '-t, --match <keywords>',
     `Match the request path with given string, can be seperated with comma.`
   )
-  .example('msw-auto-mock ./githubapi.yaml -o mock.js')
-  .example('msw-auto-mock ./githubapi.yaml -o mock.js -t /admin,/repo -m 30')
+  .example('openapi-to-msw ./githubapi.yaml -o mock.js')
+  .example('openapi-to-msw ./githubapi.yaml -o mock.js -t /admin,/repo -m 30')
   .action(async (spec, options) => {
     await generate(spec, options).catch(console.error);
   });

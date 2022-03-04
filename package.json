@@ -1,5 +1,5 @@
 {
-  "name": "@schiughi/msw-auto-mock",
+  "name": "openapi-to-msw",
   "version": "1.0.1",
   "description": "Generate random mock data from OpenAPI descriptions for msw.",
   "main": "dist/cli.js",
@@ -17,7 +17,7 @@
     }
   },
   "bin": {
-    "msw-auto-mock": "./bin/cli.js"
+    "openapi-to-msw": "./bin/cli.js"
   },
   "scripts": {
     "build": "tsup",
@@ -54,9 +54,9 @@
     "typescript": "^4.5.4",
     "vitest": "^0.0.132"
   },
-  "repository": "git+https://github.com/schiughi/msw-auto-mock.git",
+  "repository": "git+https://github.com/schiughi/openapi-to-msw.git",
   "bugs": {
-    "url": "https://github.com/schiughi/msw-auto-mock/issues"
+    "url": "https://github.com/schiughi/openapi-to-msw/issues"
   },
   "files": [
     "dist"
