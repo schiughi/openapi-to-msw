@@ -9,24 +9,24 @@ export type OperationCollection = {
   }[];
 }[];
 
-export function transformToHandlerCode(
+export function transformToFacotriesCode(
   operationCollection: OperationCollection
-): string {
+) {
   return operationCollection
     .map(op => {
-      return `rest.${op.verb}('${op.path}', (req, res, ctx) => {
-        const resultArray = [${op.responseMap.map(response => {
-          return `[ctx.status(${parseInt(
-            response?.code!
-          )}), ctx.json(${transformJSONSchemaToFakerCode(
+      return `{
+      method: "${op.verb}",
+      path: "${op.path}",
+      responses: [${op.responseMap.map(response => {
+        return `{
+          status: ${Number(response?.code)},
+          json: ${transformJSONSchemaToFakerCode(
             response?.responses?.['application/json']
-          )})]`;
-        })}]
-        return res(
-          ...faker.random.arrayElement(resultArray)
-        )}),\n`;
+          )}
+        }`;
+      })}]}`;
     })
-    .join('  ')
+    .join(',')
     .trimEnd();
 }
 
