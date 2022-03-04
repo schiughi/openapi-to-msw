@@ -6,7 +6,7 @@ import { OpenAPIV3 } from 'openapi-types';
 
 import { getV3Doc } from './swagger';
 import { prettify, toExpressLikePath } from './utils';
-import { OperationCollection, transformToHandlerCode } from './transform';
+import { OperationCollection, transformToFacotriesCode } from './transform';
 import { browserMockTemplate } from './template';
 import { CliOptions } from './types';
 
@@ -55,7 +55,7 @@ export async function generate(spec: string, options: CliOptions) {
     });
 
   code = browserMockTemplate(
-    transformToHandlerCode(operationCollection),
+    transformToFacotriesCode(operationCollection),
     options
   );
 
