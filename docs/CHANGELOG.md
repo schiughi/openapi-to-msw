@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/schiughi/openapi-to-msw/compare/1.0.0...1.1.0) (2022-03-04)
+
+
+### Features
+
+* **new version:** release forcibly ([8246761](https://github.com/schiughi/openapi-to-msw/commit/8246761c638cf7f80738d64e85574ac2e7093387))
+
 # 1.0.0 (2022-03-04)
 
 
