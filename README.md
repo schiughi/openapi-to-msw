@@ -1,7 +1,7 @@
 # openapi-to-msw
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/schiughi/openapi-to-msw/Test)
-![npm](https://img.shields.io/npm/v/openapi-to-msw)
+![GitHub Workflow Status](https://github.com/schiughi/openapi-to-msw/workflows/Test/badge.svg)
+[![npm version](https://badge.fury.io/js/openapi-to-msw.svg)](https://badge.fury.io/js/openapi-to-msw)
 
 A cli tool to generate random mock data from OpenAPI descriptions for [msw](https://github.com/mswjs/msw) and Storybook.
 
