@@ -4,7 +4,7 @@ type Method = keyof typeof rest;
 
 export type Factory = {
   path: string;
-  method: Method;
+  method: string;
   responses: {
     status: number;
     json: any;
@@ -19,7 +19,8 @@ export function getHandler<F extends Factory>(
   factory: F,
   options: Options = { case: 'nominal' }
 ) {
-  return rest[factory.method](factory.path, (_, res, ctx) => {
+  const method = factory.method as Method;
+  return rest[method](factory.path, (_, res, ctx) => {
     const response = factory.responses.find(response => {
       switch (options.case) {
         case 'nominal':

@@ -1,6 +1,6 @@
 # openapi-to-msw
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/zoubingwu/openapi-to-msw/Test)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/schiughi/openapi-to-msw/Test)
 ![npm](https://img.shields.io/npm/v/openapi-to-msw)
 
 A cli tool to generate random mock data from OpenAPI descriptions for [msw](https://github.com/mswjs/msw).
@@ -43,10 +43,11 @@ npx msw init public/ --save
 Then import those mock definitions in you app entry:
 
 ```js
-import { startWorker } from './mock';
+import { getHandlers } from "openapi-to-msw"
+import { factories } from './mock';
 
 if (process.env.NODE_ENV === 'development') {
-  startWorker();
+  startWorker(getHandlers(factories));
 }
 ```
 
