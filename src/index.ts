@@ -26,20 +26,19 @@ export function getHandler<F extends Factory>(
         case 'nominal':
           return response.status < 400;
         case 'non-nominal':
-          return 400 < response.status;
+          return 400 <= response.status;
         default:
           return response.status === options.case;
       }
     });
     if (!response) {
-      res(
+      return res(
         ctx.status(500),
         ctx.text(`
       undefined case: ${options.case} on ${factory.method}: ${factory.path}`)
       );
-      return;
     }
-    res(ctx.status(response.status), ctx.json(response.json));
+    return res(ctx.status(response.status), ctx.json(response.json));
   });
 }
 
