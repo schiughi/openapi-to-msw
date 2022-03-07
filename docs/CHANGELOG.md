@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/schiughi/openapi-to-msw/compare/1.1.3...1.1.4) (2022-03-07)
+
+
+### Bug Fixes
+
+* **index:** return res() ([72063a9](https://github.com/schiughi/openapi-to-msw/commit/72063a96a015ef9cd7c5b9b6d10134c634774954))
+
 ## [1.1.3](https://github.com/schiughi/openapi-to-msw/compare/1.1.2...1.1.3) (2022-03-07)
 
 
