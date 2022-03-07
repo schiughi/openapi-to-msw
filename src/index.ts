@@ -32,9 +32,12 @@ export function getHandler<F extends Factory>(
       }
     });
     if (!response) {
-      throw new Error(`
-          undefined case: ${options.case} on ${factory.method}: ${factory.path}
-        `);
+      res(
+        ctx.status(500),
+        ctx.text(`
+      undefined case: ${options.case} on ${factory.method}: ${factory.path}`)
+      );
+      return;
     }
     res(ctx.status(response.status), ctx.json(response.json));
   });
