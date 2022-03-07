@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/schiughi/openapi-to-msw/compare/1.1.1...1.1.2) (2022-03-07)
+
+
+### Bug Fixes
+
+* **type:** fix type error ([8e2f8d6](https://github.com/schiughi/openapi-to-msw/commit/8e2f8d653ff70b6b16b5dacf61aa60cf81c5b78a))
+
 ## [1.1.1](https://github.com/schiughi/openapi-to-msw/compare/1.1.0...1.1.1) (2022-03-07)
 
 
