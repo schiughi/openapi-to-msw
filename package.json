@@ -2,8 +2,8 @@
   "name": "openapi-to-msw",
   "version": "1.0.0",
   "description": "Generate random mock data from OpenAPI descriptions for msw.",
-  "main": "dist/cli.js",
-  "module": "./dist/cli.mjs",
+  "main": "dist/index.js",
+  "module": "./dist/index.mjs",
   "exports": {
     ".": {
       "require": "./dist/index.js",
