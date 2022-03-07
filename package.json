@@ -1,6 +1,6 @@
 {
   "name": "openapi-to-msw",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Generate random mock data from OpenAPI descriptions for msw.",
   "main": "dist/index.js",
   "module": "./dist/index.mjs",
