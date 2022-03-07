@@ -49,7 +49,7 @@ function transformJSONSchemaToFakerCode(
 
   switch (jsonSchema.type) {
     case 'string':
-      return transformStringBasedOnFormat(jsonSchema.format);
+      return transformStringBasedOnFormat(jsonSchema);
     case 'number':
       return `faker.datatype.number()`;
     case 'integer':
@@ -86,8 +86,11 @@ function transformJSONSchemaToFakerCode(
 /**
  * See https://json-schema.org/understanding-json-schema/reference/string.html#built-in-formats
  */
-function transformStringBasedOnFormat(format?: string) {
-  switch (format) {
+function transformStringBasedOnFormat(jsonSchema: OpenAPIV3.SchemaObject) {
+  if ('x-faker' in jsonSchema) {
+    return `faker.${jsonSchema['x-faker']}()`;
+  }
+  switch (jsonSchema.format) {
     case 'date-time':
       return 'faker.date.recent()';
     case 'date':
