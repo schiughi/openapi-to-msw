@@ -3,11 +3,7 @@
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/schiughi/openapi-to-msw/Test)
 ![npm](https://img.shields.io/npm/v/openapi-to-msw)
 
-A cli tool to generate random mock data from OpenAPI descriptions for [msw](https://github.com/mswjs/msw).
-
-## Why
-
-We already have all the type definitions from OpenAPI spec so hand-writing every response resolver is completely unnecessary.
+A cli tool to generate random mock data from OpenAPI descriptions for [msw](https://github.com/mswjs/msw) and Storybook.
 
 ## Usage
 
@@ -48,6 +44,51 @@ import { factories } from './mock';
 
 if (process.env.NODE_ENV === 'development') {
   startWorker(getHandlers(factories));
+}
+```
+
+### Storybook Integration
+```js
+// preview.js
+import {
+  initialize,
+  mswDecorator,
+} from "msw-storybook-addon";
+import { getHandlers } from "openapi-to-msw"
+import { factories } from './mock';
+
+initialize();
+
+export const parameters = {
+  msw: {
+    handlers: getHandlersWithKey(factories),
+  },
+};
+```
+
+```js
+// SomeComponent.stories.tsx
+export default {
+  component: SomeComponent,
+}
+
+export const Default: Story = {}
+
+// for Error case
+const customMockData = {
+  ...
+}
+
+const customHandlers = getHandlersWithKey(customMockData, { case: "non-nominal" })
+
+export const Error: Story = {
+  parameters: {
+    msw: {
+      handlers: {
+        ...customHandlers
+      }
+    },
+  },
 }
 ```
 

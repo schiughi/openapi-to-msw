@@ -48,3 +48,17 @@ export function getHandlers<F extends Factory>(
 ) {
   return factories.map(f => getHandler(f, options));
 }
+
+export function getHandlersWithKey<F extends Factory>(
+  factories: F[],
+  options: Options
+) {
+  return getHandlers(factories, options).reduce((accum, current) => {
+    const key = `${current.info.method}:${current.info.path}`;
+
+    return {
+      ...accum,
+      [key]: current
+    }
+  }, {});
+};
