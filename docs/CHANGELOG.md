@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/schiughi/openapi-to-msw/compare/1.1.4...1.1.5) (2022-03-07)
+
+
+### Bug Fixes
+
+* **x-faker:** add optional property "x-faker" ([8e6e51c](https://github.com/schiughi/openapi-to-msw/commit/8e6e51c55b925bfe859b9b37c718ff504d461d5c))
+
 ## [1.1.4](https://github.com/schiughi/openapi-to-msw/compare/1.1.3...1.1.4) (2022-03-07)
 
 
