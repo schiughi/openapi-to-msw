@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/schiughi/openapi-to-msw/compare/1.1.5...1.1.6) (2022-03-07)
+
+
+### Bug Fixes
+
+* **storybook-integration:** add object pattern ([3b9e1e6](https://github.com/schiughi/openapi-to-msw/commit/3b9e1e6274c0a9cc521c9a85c979a4fadbd311f3))
+
 ## [1.1.5](https://github.com/schiughi/openapi-to-msw/compare/1.1.4...1.1.5) (2022-03-07)
 
 
