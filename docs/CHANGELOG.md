@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/schiughi/openapi-to-msw/compare/1.1.2...1.1.3) (2022-03-07)
+
+
+### Bug Fixes
+
+* **runtime:** fix error response ([33201d6](https://github.com/schiughi/openapi-to-msw/commit/33201d63c6c10b45638040b556bcfd8db0bdbcd9))
+
 ## [1.1.2](https://github.com/schiughi/openapi-to-msw/compare/1.1.1...1.1.2) (2022-03-07)
 
 
