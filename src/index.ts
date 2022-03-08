@@ -2,12 +2,20 @@ import { rest } from 'msw';
 
 type Method = keyof typeof rest;
 
-export type Factory = {
-  path: string;
-  method: string;
-  responses: {
-    status: number;
-    json: any;
+export type Factories = {
+  readonly [path: string]: {
+    readonly [method: string]: {
+      readonly [code: number]: any;
+    };
+  };
+};
+
+type DenormalizedFactory = {
+  readonly path: string;
+  readonly method: string;
+  readonly responses: readonly {
+    readonly status: number;
+    readonly json: any;
   }[];
 };
 
@@ -15,9 +23,9 @@ type Options = {
   case: 'nominal' | 'non-nominal' | number;
 };
 
-export function getHandler<F extends Factory>(
-  factory: F,
-  options: Options = { case: 'nominal' }
+function getHandler<Factory extends DenormalizedFactory>(
+  factory: Factory,
+  options: Options
 ) {
   const method = factory.method as Method;
   return rest[method](factory.path, (_, res, ctx) => {
@@ -42,23 +50,38 @@ export function getHandler<F extends Factory>(
   });
 }
 
-export function getHandlers<F extends Factory>(
-  factories: F[],
-  options: Options
-) {
-  return factories.map(f => getHandler(f, options));
+function denormalize<F extends Factories>(
+  factories: F
+): readonly DenormalizedFactory[] {
+  return Object.entries(factories).flatMap(([path, methods]) => {
+    return Object.entries(methods).flatMap(([method, codes]) => ({
+      path,
+      method,
+      responses: Object.entries(codes).map(([code, json]) => ({
+        status: Number(code),
+        json,
+      })),
+    }));
+  });
 }
 
-export function getHandlersWithKey<F extends Factory>(
-  factories: F[],
-  options: Options
+export function getHandlers<F extends Factories>(
+  factories: F,
+  options: Options = { case: 'nominal' }
+) {
+  return denormalize(factories).map(f => getHandler(f, options));
+}
+
+export function getHandlersWithKey<F extends Factories>(
+  factories: F,
+  options: Options = { case: 'nominal' }
 ) {
   return getHandlers(factories, options).reduce((accum, current) => {
     const key = `${current.info.method}:${current.info.path}`;
 
     return {
       ...accum,
-      [key]: current
-    }
+      [key]: current,
+    };
   }, {});
-};
+}

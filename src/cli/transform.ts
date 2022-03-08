@@ -9,25 +9,41 @@ export type OperationCollection = {
   }[];
 }[];
 
+function toJSON(value: unknown): string {
+  if (!value) {
+    return 'null';
+  }
+  if (typeof value === 'object') {
+    return `{${Object.entries(value)
+      .map(([key, value]) => `"${key}": ${toJSON(value)}`)
+      .join(',\n')}}`;
+  }
+  return `${value}`;
+}
+
 export function transformToFacotriesCode(
   operationCollection: OperationCollection
 ) {
-  return operationCollection
-    .map(op => {
-      return `{
-      method: "${op.verb}",
-      path: "${op.path}",
-      responses: [${op.responseMap.map(response => {
-        return `{
-          status: ${Number(response?.code)},
-          json: ${transformJSONSchemaToFakerCode(
-            response?.responses?.['application/json']
-          )}
-        }`;
-      })}]}`;
-    })
-    .join(',')
-    .trimEnd();
+  const object = operationCollection.reduce(
+    (operations, current) => ({
+      ...operations,
+      [current.path]: {
+        // @ts-ignore
+        ...operations[current.path],
+        [current.verb]: current.responseMap.reduce(
+          (responses, r) => ({
+            ...responses,
+            [r.code]: transformJSONSchemaToFakerCode(
+              r.responses?.['application/json']
+            ),
+          }),
+          {}
+        ),
+      },
+    }),
+    {}
+  );
+  return toJSON(object);
 }
 
 function transformJSONSchemaToFakerCode(

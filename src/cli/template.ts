@@ -10,5 +10,5 @@ faker.seed(1);
 
 const MAX_ARRAY_LENGTH = ${options?.maxArrayLength ?? 20};
 
-export const factories = [${factories}];
+export const factories = ${factories};
 `;
