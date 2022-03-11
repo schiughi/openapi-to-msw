@@ -25,30 +25,32 @@ type Options = {
    * - success: 200 ~ 399
    * - error: 400 ~ 599
    */
-  statusCode: 'success' | 'error' | number;
+  statusCode?: 'success' | 'error' | number;
+  baseURL?: string;
 };
 
 function getHandler<Factory extends DenormalizedFactory>(
   factory: Factory,
-  options: Options
+  { statusCode, baseURL = '' }: Options
 ) {
   const method = factory.method as Method;
-  return rest[method](factory.path, (_, res, ctx) => {
+  const url = `${baseURL}${factory.path}`;
+  return rest[method](url, (_, res, ctx) => {
     const response = factory.responses.find(response => {
-      switch (options.statusCode) {
+      switch (statusCode) {
         case 'success':
           return response.status < 400;
         case 'error':
           return 400 <= response.status;
         default:
-          return response.status === options.statusCode;
+          return response.status === statusCode;
       }
     });
     if (!response) {
       return res(
         ctx.status(500),
         ctx.text(`
-      undefined statusCode: ${options.statusCode} on ${factory.method}: ${factory.path}`)
+      undefined statusCode: ${statusCode} on ${factory.method}: ${url}`)
       );
     }
     return res(ctx.status(response.status), ctx.json(response.json));
