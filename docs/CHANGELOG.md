@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/schiughi/openapi-to-msw/compare/1.1.6...1.1.7) (2022-03-08)
+
+
+### Bug Fixes
+
+* **transform:** modify factory structure ([bda1fd2](https://github.com/schiughi/openapi-to-msw/commit/bda1fd28a65447f6a7a590629a59397ea8a442d7))
+
 ## [1.1.6](https://github.com/schiughi/openapi-to-msw/compare/1.1.5...1.1.6) (2022-03-07)
 
 
