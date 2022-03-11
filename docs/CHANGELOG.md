@@ -1,3 +1,10 @@
+## [1.1.9](https://github.com/schiughi/openapi-to-msw/compare/1.1.8...1.1.9) (2022-03-11)
+
+
+### Bug Fixes
+
+* **option:** add option "baseURL" ([04af9bc](https://github.com/schiughi/openapi-to-msw/commit/04af9bc3c3b3c029d272dfb687cee3afa65fee77))
+
 ## [1.1.8](https://github.com/schiughi/openapi-to-msw/compare/1.1.7...1.1.8) (2022-03-11)
 
 
