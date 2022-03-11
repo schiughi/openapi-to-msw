@@ -20,7 +20,12 @@ type DenormalizedFactory = {
 };
 
 type Options = {
-  case: 'nominal' | 'non-nominal' | number;
+  /**
+   * return matched response from factory.responses
+   * - success: 200 ~ 399
+   * - error: 400 ~ 599
+   */
+  statusCode: 'success' | 'error' | number;
 };
 
 function getHandler<Factory extends DenormalizedFactory>(
@@ -30,20 +35,20 @@ function getHandler<Factory extends DenormalizedFactory>(
   const method = factory.method as Method;
   return rest[method](factory.path, (_, res, ctx) => {
     const response = factory.responses.find(response => {
-      switch (options.case) {
-        case 'nominal':
+      switch (options.statusCode) {
+        case 'success':
           return response.status < 400;
-        case 'non-nominal':
+        case 'error':
           return 400 <= response.status;
         default:
-          return response.status === options.case;
+          return response.status === options.statusCode;
       }
     });
     if (!response) {
       return res(
         ctx.status(500),
         ctx.text(`
-      undefined case: ${options.case} on ${factory.method}: ${factory.path}`)
+      undefined statusCode: ${options.statusCode} on ${factory.method}: ${factory.path}`)
       );
     }
     return res(ctx.status(response.status), ctx.json(response.json));
@@ -67,14 +72,14 @@ function denormalize<F extends Factories>(
 
 export function getHandlers<F extends Factories>(
   factories: F,
-  options: Options = { case: 'nominal' }
+  options: Options = { statusCode: 'success' }
 ) {
   return denormalize(factories).map(f => getHandler(f, options));
 }
 
 export function getHandlersWithKey<F extends Factories>(
   factories: F,
-  options: Options = { case: 'nominal' }
+  options: Options = { statusCode: 'success' }
 ) {
   return getHandlers(factories, options).reduce((accum, current) => {
     const key = `${current.info.method}:${current.info.path}`;

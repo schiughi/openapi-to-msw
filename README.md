@@ -79,7 +79,7 @@ const customMockData = {
   ...
 }
 
-const customHandlers = getHandlersWithKey(customMockData, { case: "non-nominal" })
+const customHandlers = getHandlersWithKey(customMockData, { statusCode: "success" })
 
 export const Error: Story = {
   parameters: {
