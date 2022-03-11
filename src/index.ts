@@ -31,7 +31,7 @@ type Options = {
 
 function getHandler<Factory extends DenormalizedFactory>(
   factory: Factory,
-  { statusCode, baseURL = '' }: Options
+  { statusCode = 'success', baseURL = '' }: Options
 ) {
   const method = factory.method as Method;
   const url = `${baseURL}${factory.path}`;
