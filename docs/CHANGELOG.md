@@ -1,3 +1,10 @@
+## [1.1.8](https://github.com/schiughi/openapi-to-msw/compare/1.1.7...1.1.8) (2022-03-11)
+
+
+### Bug Fixes
+
+* **option:** modify option property name ([fc0520d](https://github.com/schiughi/openapi-to-msw/commit/fc0520de07fac44a0152dabb13b7df8b3cbe5eb4))
+
 ## [1.1.7](https://github.com/schiughi/openapi-to-msw/compare/1.1.6...1.1.7) (2022-03-08)
 
 
