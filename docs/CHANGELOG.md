@@ -1,3 +1,10 @@
+## [1.1.10](https://github.com/schiughi/openapi-to-msw/compare/1.1.9...1.1.10) (2022-03-11)
+
+
+### Bug Fixes
+
+* **option:** add default option ([4518866](https://github.com/schiughi/openapi-to-msw/commit/45188663decd18808f00426a00ee1d1ec4d5ba64))
+
 ## [1.1.9](https://github.com/schiughi/openapi-to-msw/compare/1.1.8...1.1.9) (2022-03-11)
 
 
