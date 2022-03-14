@@ -101,3 +101,37 @@ Run you app then you'll see a successful activation message from Mock Service Wo
  - `-m, --max-array-length <number>`: specify max array length in response, it'll cost some time if you want to generate a huge chunk of random data.
  - `-t, --match <keywords>`: specify keywords to match if you want to generate mock data only for certain requests, multiple keywords can be seperated with comma.
  - `-h, --help`: show help info.
+
+### Response Generation
+- openapi-to-msw generates random value according to `type`, `format`, and `x-faker` property like Stoplight/Prism
+
+```yml
+Pet:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    name:
+      type: string
+      x-faker: name.firstName
+      example: doggie
+    photoUrls:
+      type: array
+      items:
+        type: string
+        x-faker: image.imageUrl
+```
+
+```json
+{
+  "id": 12608726,
+  "name": "Addison",
+  "photoUrls": [
+    "http://lorempixel.com/640/480",
+    "http://lorempixel.com/640/480",
+    "http://lorempixel.com/640/480",
+    "http://lorempixel.com/640/480"
+  ]
+}
+```
