@@ -1,3 +1,10 @@
+## [1.1.11](https://github.com/schiughi/openapi-to-msw/compare/1.1.10...1.1.11) (2022-03-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency msw to v0.39.1 ([c2597ab](https://github.com/schiughi/openapi-to-msw/commit/c2597ab6da8c8b8156362b5f5624f1d60e3fef82))
+
 ## [1.1.10](https://github.com/schiughi/openapi-to-msw/compare/1.1.9...1.1.10) (2022-03-11)
 
 
