@@ -1,3 +1,10 @@
+## [1.1.12](https://github.com/schiughi/openapi-to-msw/compare/1.1.11...1.1.12) (2022-03-16)
+
+
+### Bug Fixes
+
+* **faker:** fix typings for date format ([6c21941](https://github.com/schiughi/openapi-to-msw/commit/6c2194198a474a3c66024eac77f968e4c588850e))
+
 ## [1.1.11](https://github.com/schiughi/openapi-to-msw/compare/1.1.10...1.1.11) (2022-03-15)
 
 
