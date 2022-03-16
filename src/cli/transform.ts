@@ -110,9 +110,9 @@ function transformStringBasedOnFormat(jsonSchema: OpenAPIV3.SchemaObject) {
     case 'date-time':
       return 'faker.date.recent()';
     case 'date':
-      return 'faker.date.recent().slice(0, 10)';
+      return 'faker.date.recent().toISOString().slice(0, 10)';
     case 'time':
-      return 'faker.date.recent().slice(11)';
+      return 'faker.date.recent().toISOString().slice(11)';
     case 'email':
       return 'faker.internet.exampleEmail()';
     case 'uuid':
