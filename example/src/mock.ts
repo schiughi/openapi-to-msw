@@ -11,7 +11,7 @@ const MAX_ARRAY_LENGTH = 20;
 export const factories = {
   '/': {
     get: {
-      200: {
+      '200': {
         current_user_url: faker.lorem.slug(),
         current_user_authorizations_html_url: faker.lorem.slug(),
         authorizations_url: faker.lorem.slug(),
@@ -50,7 +50,7 @@ export const factories = {
   },
   '/admin/hooks': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         type: faker.lorem.slug(),
@@ -73,7 +73,7 @@ export const factories = {
       })),
     },
     post: {
-      201: {
+      '201': {
         type: faker.lorem.slug(),
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
@@ -96,7 +96,7 @@ export const factories = {
   },
   '/admin/hooks/:hookId': {
     get: {
-      200: {
+      '200': {
         type: faker.lorem.slug(),
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
@@ -117,7 +117,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         type: faker.lorem.slug(),
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
@@ -136,12 +136,12 @@ export const factories = {
         ping_url: faker.lorem.slug(),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
-  '/admin/hooks/:hookId/pings': { post: { 204: null } },
+  '/admin/hooks/:hookId/pings': { post: { '204': null } },
   '/admin/keys': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -157,10 +157,10 @@ export const factories = {
       })),
     },
   },
-  '/admin/keys/:keyIds': { delete: { 204: null } },
+  '/admin/keys/:keyIds': { delete: { '204': null } },
   '/admin/ldap/teams/:teamId/mapping': {
     patch: {
-      200: {
+      '200': {
         ldap_dn: faker.lorem.slug(),
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
@@ -179,14 +179,14 @@ export const factories = {
   },
   '/admin/ldap/teams/:teamId/sync': {
     post: {
-      201: {
+      '201': {
         status: faker.lorem.slug(),
       },
     },
   },
   '/admin/ldap/users/:username/mapping': {
     patch: {
-      200: {
+      '200': {
         ldap_dn: faker.lorem.slug(),
         login: faker.lorem.slug(),
         id: faker.datatype.number(),
@@ -239,14 +239,14 @@ export const factories = {
   },
   '/admin/ldap/users/:username/sync': {
     post: {
-      201: {
+      '201': {
         status: faker.lorem.slug(),
       },
     },
   },
   '/admin/organizations': {
     post: {
-      201: {
+      '201': {
         login: faker.lorem.slug(),
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
@@ -264,7 +264,7 @@ export const factories = {
   },
   '/admin/organizations/:org': {
     patch: {
-      202: {
+      '202': {
         message: faker.lorem.slug(),
         url: faker.lorem.slug(),
       },
@@ -272,7 +272,7 @@ export const factories = {
   },
   '/admin/pre-receive-environments': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -292,7 +292,7 @@ export const factories = {
       })),
     },
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         image_url: faker.lorem.slug(),
@@ -312,7 +312,7 @@ export const factories = {
   },
   '/admin/pre-receive-environments/:preReceiveEnvironmentId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         image_url: faker.lorem.slug(),
@@ -330,7 +330,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         image_url: faker.lorem.slug(),
@@ -346,7 +346,7 @@ export const factories = {
           message: faker.lorem.slug(),
         },
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         errors: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -358,8 +358,8 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      422: {
+      '204': null,
+      '422': {
         message: faker.lorem.slug(),
         errors: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -373,13 +373,13 @@ export const factories = {
   },
   '/admin/pre-receive-environments/:preReceiveEnvironmentId/downloads': {
     post: {
-      202: {
+      '202': {
         url: faker.lorem.slug(),
         state: faker.lorem.slug(),
         downloaded_at: faker.lorem.slug(),
         message: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         errors: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -393,7 +393,7 @@ export const factories = {
   },
   '/admin/pre-receive-environments/:preReceiveEnvironmentId/downloads/latest': {
     get: {
-      200: {
+      '200': {
         url: faker.lorem.slug(),
         state: faker.lorem.slug(),
         downloaded_at: faker.lorem.slug(),
@@ -403,7 +403,7 @@ export const factories = {
   },
   '/admin/pre-receive-hooks': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -436,7 +436,7 @@ export const factories = {
       })),
     },
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         enforcement: faker.lorem.slug(),
@@ -469,7 +469,7 @@ export const factories = {
   },
   '/admin/pre-receive-hooks/:preReceiveHookId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         enforcement: faker.lorem.slug(),
@@ -500,7 +500,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         enforcement: faker.lorem.slug(),
@@ -530,11 +530,11 @@ export const factories = {
         allow_downstream_configuration: faker.datatype.boolean(),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/admin/tokens': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -669,10 +669,10 @@ export const factories = {
       })),
     },
   },
-  '/admin/tokens/:tokenId': { delete: { 204: null } },
+  '/admin/tokens/:tokenId': { delete: { '204': null } },
   '/admin/users': {
     post: {
-      201: {
+      '201': {
         name: faker.lorem.slug(),
         email: faker.lorem.slug(),
         login: faker.lorem.slug(),
@@ -699,16 +699,16 @@ export const factories = {
   },
   '/admin/users/:username': {
     patch: {
-      202: {
+      '202': {
         message: faker.lorem.slug(),
         url: faker.lorem.slug(),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/admin/users/:username/authorizations': {
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         url: faker.internet.url(),
         scopes: [
@@ -840,11 +840,11 @@ export const factories = {
         expires_at: faker.date.recent(),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/app': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         slug: faker.lorem.slug(),
         node_id: faker.lorem.slug(),
@@ -897,14 +897,14 @@ export const factories = {
   },
   '/app-manifests/:code/conversions': {
     post: {
-      201: null,
-      404: {
+      '201': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -915,7 +915,7 @@ export const factories = {
   },
   '/app/hook/config': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         content_type: faker.lorem.slug(),
         secret: faker.lorem.slug(),
@@ -923,7 +923,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         content_type: faker.lorem.slug(),
         secret: faker.lorem.slug(),
@@ -933,7 +933,7 @@ export const factories = {
   },
   '/app/hook/deliveries': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -948,13 +948,13 @@ export const factories = {
         installation_id: faker.datatype.number(),
         repository_id: faker.datatype.number(),
       })),
-      400: {
+      '400': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -972,7 +972,7 @@ export const factories = {
   },
   '/app/hook/deliveries/:deliveryId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         guid: faker.lorem.slug(),
         delivered_at: faker.date.recent(),
@@ -994,13 +994,13 @@ export const factories = {
           payload: faker.lorem.slug(),
         },
       },
-      400: {
+      '400': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -1018,14 +1018,14 @@ export const factories = {
   },
   '/app/hook/deliveries/:deliveryId/attempts': {
     post: {
-      202: {},
-      400: {
+      '202': {},
+      '400': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -1043,7 +1043,7 @@ export const factories = {
   },
   '/app/installations': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -1146,7 +1146,7 @@ export const factories = {
   },
   '/app/installations/:installationId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         account: null,
         repository_selection: faker.random.arrayElement(['all', 'selected']),
@@ -1243,20 +1243,20 @@ export const factories = {
         suspended_at: faker.date.recent(),
         contact_email: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      415: {
+      '415': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
     },
     delete: {
-      204: null,
-      404: {
+      '204': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -1266,7 +1266,7 @@ export const factories = {
   },
   '/app/installations/:installationId/access_tokens': {
     post: {
-      201: {
+      '201': {
         token: faker.lorem.slug(),
         expires_at: faker.lorem.slug(),
         permissions: {
@@ -1593,29 +1593,29 @@ export const factories = {
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => faker.lorem.slug()),
       },
-      401: {
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      415: {
+      '415': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -1633,8 +1633,8 @@ export const factories = {
   },
   '/app/installations/:installationId/suspended': {
     put: {
-      204: null,
-      404: {
+      '204': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -1642,8 +1642,8 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      404: {
+      '204': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -1653,7 +1653,7 @@ export const factories = {
   },
   '/applications/grants': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -1692,20 +1692,20 @@ export const factories = {
           starred_at: faker.lorem.slug(),
         },
       })),
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -1715,7 +1715,7 @@ export const factories = {
   },
   '/applications/grants/:grantId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         url: faker.internet.url(),
         app: {
@@ -1752,14 +1752,14 @@ export const factories = {
           starred_at: faker.lorem.slug(),
         },
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -1767,15 +1767,15 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      304: null,
-      401: {
+      '204': null,
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -1785,8 +1785,8 @@ export const factories = {
   },
   '/applications/:clientId/grant': {
     delete: {
-      204: null,
-      422: {
+      '204': null,
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -1802,10 +1802,10 @@ export const factories = {
       },
     },
   },
-  '/applications/:clientId/grants/:accessToken': { delete: { 204: null } },
+  '/applications/:clientId/grants/:accessToken': { delete: { '204': null } },
   '/applications/:clientId/token': {
     post: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         url: faker.internet.url(),
         scopes: [
@@ -1936,13 +1936,13 @@ export const factories = {
         },
         expires_at: faker.date.recent(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -1958,7 +1958,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         url: faker.internet.url(),
         scopes: [
@@ -2089,7 +2089,7 @@ export const factories = {
         },
         expires_at: faker.date.recent(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -2105,8 +2105,8 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      422: {
+      '204': null,
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -2124,7 +2124,7 @@ export const factories = {
   },
   '/applications/:clientId/token/scoped': {
     post: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         url: faker.internet.url(),
         scopes: [
@@ -2255,25 +2255,25 @@ export const factories = {
         },
         expires_at: faker.date.recent(),
       },
-      401: {
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -2291,7 +2291,7 @@ export const factories = {
   },
   '/applications/:clientId/tokens/:accessToken': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         url: faker.internet.url(),
         scopes: [
@@ -2422,7 +2422,7 @@ export const factories = {
         },
         expires_at: faker.date.recent(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -2430,7 +2430,7 @@ export const factories = {
       },
     },
     post: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         url: faker.internet.url(),
         scopes: [
@@ -2562,11 +2562,11 @@ export const factories = {
         expires_at: faker.date.recent(),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/apps/:appSlug': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         slug: faker.lorem.slug(),
         node_id: faker.lorem.slug(),
@@ -2615,19 +2615,19 @@ export const factories = {
         webhook_secret: faker.lorem.slug(),
         pem: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      415: {
+      '415': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
@@ -2635,7 +2635,7 @@ export const factories = {
   },
   '/authorizations': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -2768,20 +2768,20 @@ export const factories = {
         },
         expires_at: faker.date.recent(),
       })),
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -2789,7 +2789,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         url: faker.internet.url(),
         scopes: [
@@ -2920,26 +2920,26 @@ export const factories = {
         },
         expires_at: faker.date.recent(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -2957,7 +2957,7 @@ export const factories = {
   },
   '/authorizations/clients/:clientId': {
     put: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         url: faker.internet.url(),
         scopes: [
@@ -3088,7 +3088,7 @@ export const factories = {
         },
         expires_at: faker.date.recent(),
       },
-      201: {
+      '201': {
         id: faker.datatype.number(),
         url: faker.internet.url(),
         scopes: [
@@ -3219,20 +3219,20 @@ export const factories = {
         },
         expires_at: faker.date.recent(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -3250,7 +3250,7 @@ export const factories = {
   },
   '/authorizations/clients/:clientId/:fingerprint': {
     put: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         url: faker.internet.url(),
         scopes: [
@@ -3381,7 +3381,7 @@ export const factories = {
         },
         expires_at: faker.date.recent(),
       },
-      201: {
+      '201': {
         id: faker.datatype.number(),
         url: faker.internet.url(),
         scopes: [
@@ -3512,7 +3512,7 @@ export const factories = {
         },
         expires_at: faker.date.recent(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -3530,7 +3530,7 @@ export const factories = {
   },
   '/authorizations/:authorizationId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         url: faker.internet.url(),
         scopes: [
@@ -3661,14 +3661,14 @@ export const factories = {
         },
         expires_at: faker.date.recent(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -3676,7 +3676,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         url: faker.internet.url(),
         scopes: [
@@ -3807,7 +3807,7 @@ export const factories = {
         },
         expires_at: faker.date.recent(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -3823,15 +3823,15 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      304: null,
-      401: {
+      '204': null,
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -3841,7 +3841,7 @@ export const factories = {
   },
   '/codes_of_conduct': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         key: faker.lorem.slug(),
@@ -3850,20 +3850,20 @@ export const factories = {
         body: faker.lorem.slug(),
         html_url: faker.internet.url(),
       })),
-      304: null,
+      '304': null,
     },
   },
   '/codes_of_conduct/:key': {
     get: {
-      200: {
+      '200': {
         key: faker.lorem.slug(),
         name: faker.lorem.slug(),
         url: faker.internet.url(),
         body: faker.lorem.slug(),
         html_url: faker.internet.url(),
       },
-      304: null,
-      404: {
+      '304': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -3873,30 +3873,30 @@ export const factories = {
   },
   '/emojis': {
     get: {
-      200: [...new Array(5).keys()]
+      '200': [...new Array(5).keys()]
         .map(_ => ({ [faker.lorem.word()]: faker.lorem.slug() }))
         .reduce((acc, next) => Object.assign(acc, next), {}),
-      304: null,
+      '304': null,
     },
   },
   '/enterprise/announcement': {
     get: {
-      200: {
+      '200': {
         announcement: faker.lorem.slug(),
         expires_at: faker.date.recent(),
       },
     },
     patch: {
-      200: {
+      '200': {
         announcement: faker.lorem.slug(),
         expires_at: faker.date.recent(),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/enterprise/settings/license': {
     get: {
-      200: {
+      '200': {
         seats: null,
         seats_used: faker.datatype.number(),
         seats_available: null,
@@ -3908,7 +3908,7 @@ export const factories = {
   },
   '/enterprise/stats/all': {
     get: {
-      200: {
+      '200': {
         repos: {
           total_repos: faker.datatype.number(),
           root_repos: faker.datatype.number(),
@@ -3968,7 +3968,7 @@ export const factories = {
   },
   '/enterprise/stats/comments': {
     get: {
-      200: {
+      '200': {
         total_commit_comments: faker.datatype.number(),
         total_gist_comments: faker.datatype.number(),
         total_issue_comments: faker.datatype.number(),
@@ -3978,7 +3978,7 @@ export const factories = {
   },
   '/enterprise/stats/gists': {
     get: {
-      200: {
+      '200': {
         total_gists: faker.datatype.number(),
         private_gists: faker.datatype.number(),
         public_gists: faker.datatype.number(),
@@ -3987,7 +3987,7 @@ export const factories = {
   },
   '/enterprise/stats/hooks': {
     get: {
-      200: {
+      '200': {
         total_hooks: faker.datatype.number(),
         active_hooks: faker.datatype.number(),
         inactive_hooks: faker.datatype.number(),
@@ -3996,7 +3996,7 @@ export const factories = {
   },
   '/enterprise/stats/issues': {
     get: {
-      200: {
+      '200': {
         total_issues: faker.datatype.number(),
         open_issues: faker.datatype.number(),
         closed_issues: faker.datatype.number(),
@@ -4005,7 +4005,7 @@ export const factories = {
   },
   '/enterprise/stats/milestones': {
     get: {
-      200: {
+      '200': {
         total_milestones: faker.datatype.number(),
         open_milestones: faker.datatype.number(),
         closed_milestones: faker.datatype.number(),
@@ -4014,7 +4014,7 @@ export const factories = {
   },
   '/enterprise/stats/orgs': {
     get: {
-      200: {
+      '200': {
         total_orgs: faker.datatype.number(),
         disabled_orgs: faker.datatype.number(),
         total_teams: faker.datatype.number(),
@@ -4024,14 +4024,14 @@ export const factories = {
   },
   '/enterprise/stats/pages': {
     get: {
-      200: {
+      '200': {
         total_pages: faker.datatype.number(),
       },
     },
   },
   '/enterprise/stats/pulls': {
     get: {
-      200: {
+      '200': {
         total_pulls: faker.datatype.number(),
         merged_pulls: faker.datatype.number(),
         mergeable_pulls: faker.datatype.number(),
@@ -4041,7 +4041,7 @@ export const factories = {
   },
   '/enterprise/stats/repos': {
     get: {
-      200: {
+      '200': {
         total_repos: faker.datatype.number(),
         root_repos: faker.datatype.number(),
         fork_repos: faker.datatype.number(),
@@ -4053,7 +4053,7 @@ export const factories = {
   },
   '/enterprise/stats/users': {
     get: {
-      200: {
+      '200': {
         total_users: faker.datatype.number(),
         admin_users: faker.datatype.number(),
         suspended_users: faker.datatype.number(),
@@ -4062,7 +4062,7 @@ export const factories = {
   },
   '/enterprises/:enterprise/actions/permissions': {
     get: {
-      200: {
+      '200': {
         enabled_organizations: faker.random.arrayElement([
           'all',
           'none',
@@ -4077,11 +4077,11 @@ export const factories = {
         selected_actions_url: faker.lorem.slug(),
       },
     },
-    put: { 204: null },
+    put: { '204': null },
   },
   '/enterprises/:enterprise/actions/permissions/organizations': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         organizations: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -4101,26 +4101,26 @@ export const factories = {
         })),
       },
     },
-    put: { 204: null },
+    put: { '204': null },
   },
   '/enterprises/:enterprise/actions/permissions/organizations/:orgId': {
-    put: { 204: null },
-    delete: { 204: null },
+    put: { '204': null },
+    delete: { '204': null },
   },
   '/enterprises/:enterprise/actions/permissions/selected-actions': {
     get: {
-      200: {
+      '200': {
         github_owned_allowed: faker.datatype.boolean(),
         patterns_allowed: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => faker.lorem.slug()),
       },
     },
-    put: { 204: null },
+    put: { '204': null },
   },
   '/enterprises/:enterprise/actions/runner-groups': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         runner_groups: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -4136,7 +4136,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         visibility: faker.lorem.slug(),
@@ -4149,7 +4149,7 @@ export const factories = {
   },
   '/enterprises/:enterprise/actions/runner-groups/:runnerGroupId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         visibility: faker.lorem.slug(),
@@ -4160,7 +4160,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         visibility: faker.lorem.slug(),
@@ -4170,12 +4170,12 @@ export const factories = {
         allows_public_repositories: faker.datatype.boolean(),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/enterprises/:enterprise/actions/runner-groups/:runnerGroupId/organizations':
     {
       get: {
-        200: {
+        '200': {
           total_count: faker.datatype.number(),
           organizations: [
             ...new Array(
@@ -4197,13 +4197,13 @@ export const factories = {
           })),
         },
       },
-      put: { 204: null },
+      put: { '204': null },
     },
   '/enterprises/:enterprise/actions/runner-groups/:runnerGroupId/organizations/:orgId':
-    { put: { 204: null }, delete: { 204: null } },
+    { put: { '204': null }, delete: { '204': null } },
   '/enterprises/:enterprise/actions/runner-groups/:runnerGroupId/runners': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         runners: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -4225,13 +4225,13 @@ export const factories = {
         })),
       },
     },
-    put: { 204: null },
+    put: { '204': null },
   },
   '/enterprises/:enterprise/actions/runner-groups/:runnerGroupId/runners/:runnerId':
-    { put: { 204: null }, delete: { 204: null } },
+    { put: { '204': null }, delete: { '204': null } },
   '/enterprises/:enterprise/actions/runners': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         runners: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -4256,7 +4256,7 @@ export const factories = {
   },
   '/enterprises/:enterprise/actions/runners/downloads': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         os: faker.lorem.slug(),
@@ -4270,7 +4270,7 @@ export const factories = {
   },
   '/enterprises/:enterprise/actions/runners/registration-token': {
     post: {
-      201: {
+      '201': {
         token: faker.lorem.slug(),
         expires_at: faker.date.recent(),
         permissions: {},
@@ -4548,7 +4548,7 @@ export const factories = {
   },
   '/enterprises/:enterprise/actions/runners/remove-token': {
     post: {
-      201: {
+      '201': {
         token: faker.lorem.slug(),
         expires_at: faker.date.recent(),
         permissions: {},
@@ -4826,7 +4826,7 @@ export const factories = {
   },
   '/enterprises/:enterprise/actions/runners/:runnerId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         os: faker.lorem.slug(),
@@ -4841,11 +4841,11 @@ export const factories = {
         })),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/enterprises/:enterprise/audit-log': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         '@timestamp': faker.datatype.number(),
@@ -4903,7 +4903,7 @@ export const factories = {
   },
   '/events': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.lorem.slug(),
@@ -5565,14 +5565,14 @@ export const factories = {
         public: faker.datatype.boolean(),
         created_at: faker.date.recent(),
       })),
-      304: null,
-      403: {
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      503: {
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -5581,7 +5581,7 @@ export const factories = {
   },
   '/feeds': {
     get: {
-      200: {
+      '200': {
         timeline_url: faker.lorem.slug(),
         user_url: faker.lorem.slug(),
         current_user_public_url: faker.lorem.slug(),
@@ -5635,7 +5635,7 @@ export const factories = {
   },
   '/gists': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.internet.url(),
@@ -5717,8 +5717,8 @@ export const factories = {
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => null),
       })),
-      304: null,
-      403: {
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -5726,7 +5726,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         forks: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => ({
@@ -5953,20 +5953,20 @@ export const factories = {
         },
         truncated: faker.datatype.boolean(),
       },
-      304: null,
-      403: {
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -5984,7 +5984,7 @@ export const factories = {
   },
   '/gists/public': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.internet.url(),
@@ -6066,14 +6066,14 @@ export const factories = {
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => null),
       })),
-      304: null,
-      403: {
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -6091,7 +6091,7 @@ export const factories = {
   },
   '/gists/starred': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.internet.url(),
@@ -6173,14 +6173,14 @@ export const factories = {
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => null),
       })),
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -6190,7 +6190,7 @@ export const factories = {
   },
   '/gists/:gistId': {
     get: {
-      200: {
+      '200': {
         forks: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => ({
@@ -6417,8 +6417,8 @@ export const factories = {
         },
         truncated: faker.datatype.boolean(),
       },
-      304: null,
-      403: {
+      '304': null,
+      '403': {
         block: {
           reason: faker.lorem.slug(),
           created_at: faker.lorem.slug(),
@@ -6427,7 +6427,7 @@ export const factories = {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -6435,7 +6435,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         forks: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => ({
@@ -6662,13 +6662,13 @@ export const factories = {
         },
         truncated: faker.datatype.boolean(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -6684,15 +6684,15 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      304: null,
-      403: {
+      '204': null,
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -6702,7 +6702,7 @@ export const factories = {
   },
   '/gists/:gistId/comments': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -6745,14 +6745,14 @@ export const factories = {
           'OWNER',
         ]),
       })),
-      304: null,
-      403: {
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -6760,7 +6760,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -6801,14 +6801,14 @@ export const factories = {
           'OWNER',
         ]),
       },
-      304: null,
-      403: {
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -6818,7 +6818,7 @@ export const factories = {
   },
   '/gists/:gistId/comments/:commentId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -6859,8 +6859,8 @@ export const factories = {
           'OWNER',
         ]),
       },
-      304: null,
-      403: {
+      '304': null,
+      '403': {
         block: {
           reason: faker.lorem.slug(),
           created_at: faker.lorem.slug(),
@@ -6869,7 +6869,7 @@ export const factories = {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -6877,7 +6877,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -6918,7 +6918,7 @@ export const factories = {
           'OWNER',
         ]),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -6926,15 +6926,15 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      304: null,
-      403: {
+      '204': null,
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -6944,7 +6944,7 @@ export const factories = {
   },
   '/gists/:gistId/commits': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.internet.url(),
@@ -6979,14 +6979,14 @@ export const factories = {
         },
         committed_at: faker.date.recent(),
       })),
-      304: null,
-      403: {
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -6996,7 +6996,7 @@ export const factories = {
   },
   '/gists/:gistId/forks': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         forks: [
@@ -7225,14 +7225,14 @@ export const factories = {
         },
         truncated: faker.datatype.boolean(),
       })),
-      304: null,
-      403: {
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -7240,7 +7240,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         url: faker.internet.url(),
         forks_url: faker.internet.url(),
         commits_url: faker.internet.url(),
@@ -7320,20 +7320,20 @@ export const factories = {
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => null),
       },
-      304: null,
-      403: {
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -7351,26 +7351,26 @@ export const factories = {
   },
   '/gists/:gistId/star': {
     get: {
-      204: null,
-      304: null,
-      403: {
+      '204': null,
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {},
+      '404': {},
     },
     put: {
-      204: null,
-      304: null,
-      403: {
+      '204': null,
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -7378,15 +7378,15 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      304: null,
-      403: {
+      '204': null,
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -7396,7 +7396,7 @@ export const factories = {
   },
   '/gists/:gistId/:sha': {
     get: {
-      200: {
+      '200': {
         forks: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => ({
@@ -7623,19 +7623,19 @@ export const factories = {
         },
         truncated: faker.datatype.boolean(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -7653,24 +7653,24 @@ export const factories = {
   },
   '/gitignore/templates': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => faker.lorem.slug()),
-      304: null,
+      '304': null,
     },
   },
   '/gitignore/templates/:name': {
     get: {
-      200: {
+      '200': {
         name: faker.lorem.slug(),
         source: faker.lorem.slug(),
       },
-      304: null,
+      '304': null,
     },
   },
   '/installation/repositories': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         repositories: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -7941,14 +7941,14 @@ export const factories = {
         })),
         repository_selection: faker.lorem.slug(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -7956,10 +7956,10 @@ export const factories = {
       },
     },
   },
-  '/installation/token': { delete: { 204: null } },
+  '/installation/token': { delete: { '204': null } },
   '/issues': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -8467,14 +8467,14 @@ export const factories = {
           rocket: faker.datatype.number(),
         },
       })),
-      304: null,
-      404: {
+      '304': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -8492,7 +8492,7 @@ export const factories = {
   },
   '/licenses': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         key: faker.lorem.slug(),
@@ -8502,12 +8502,12 @@ export const factories = {
         node_id: faker.lorem.slug(),
         html_url: faker.internet.url(),
       })),
-      304: null,
+      '304': null,
     },
   },
   '/licenses/:license': {
     get: {
-      200: {
+      '200': {
         key: faker.lorem.slug(),
         name: faker.lorem.slug(),
         spdx_id: faker.lorem.slug(),
@@ -8528,14 +8528,14 @@ export const factories = {
         body: faker.lorem.slug(),
         featured: faker.datatype.boolean(),
       },
-      304: null,
-      403: {
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -8543,11 +8543,11 @@ export const factories = {
       },
     },
   },
-  '/markdown': { post: { 200: null, 304: null } },
-  '/markdown/raw': { post: { 200: null, 304: null } },
+  '/markdown': { post: { '200': null, '304': null } },
+  '/markdown/raw': { post: { '200': null, '304': null } },
   '/meta': {
     get: {
-      200: {
+      '200': {
         verifiable_password_authentication: faker.datatype.boolean(),
         packages: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -8557,12 +8557,12 @@ export const factories = {
         ].map(_ => faker.lorem.slug()),
         installed_version: faker.lorem.slug(),
       },
-      304: null,
+      '304': null,
     },
   },
   '/networks/:owner/:repo/events': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.lorem.slug(),
@@ -9224,20 +9224,20 @@ export const factories = {
         public: faker.datatype.boolean(),
         created_at: faker.date.recent(),
       })),
-      301: {
+      '301': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      304: null,
-      403: {
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -9247,7 +9247,7 @@ export const factories = {
   },
   '/notifications': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.lorem.slug(),
@@ -9658,20 +9658,20 @@ export const factories = {
         url: faker.lorem.slug(),
         subscription_url: faker.lorem.slug(),
       })),
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -9687,18 +9687,18 @@ export const factories = {
       },
     },
     put: {
-      202: {
+      '202': {
         message: faker.lorem.slug(),
       },
-      205: null,
-      304: null,
-      401: {
+      '205': null,
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -9708,7 +9708,7 @@ export const factories = {
   },
   '/notifications/threads/:threadId': {
     get: {
-      200: {
+      '200': {
         id: faker.lorem.slug(),
         repository: {
           id: faker.datatype.number(),
@@ -10117,14 +10117,14 @@ export const factories = {
         url: faker.lorem.slug(),
         subscription_url: faker.lorem.slug(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -10132,9 +10132,9 @@ export const factories = {
       },
     },
     patch: {
-      205: null,
-      304: null,
-      403: {
+      '205': null,
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -10144,7 +10144,7 @@ export const factories = {
   },
   '/notifications/threads/:threadId/subscription': {
     get: {
-      200: {
+      '200': {
         subscribed: faker.datatype.boolean(),
         ignored: faker.datatype.boolean(),
         reason: faker.lorem.slug(),
@@ -10153,14 +10153,14 @@ export const factories = {
         thread_url: faker.internet.url(),
         repository_url: faker.internet.url(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -10168,7 +10168,7 @@ export const factories = {
       },
     },
     put: {
-      200: {
+      '200': {
         subscribed: faker.datatype.boolean(),
         ignored: faker.datatype.boolean(),
         reason: faker.lorem.slug(),
@@ -10177,14 +10177,14 @@ export const factories = {
         thread_url: faker.internet.url(),
         repository_url: faker.internet.url(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -10192,15 +10192,15 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      304: null,
-      401: {
+      '204': null,
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -10208,10 +10208,10 @@ export const factories = {
       },
     },
   },
-  '/octocat': { get: { 200: null } },
+  '/octocat': { get: { '200': null } },
   '/organizations': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         login: faker.lorem.slug(),
@@ -10227,12 +10227,12 @@ export const factories = {
         avatar_url: faker.lorem.slug(),
         description: faker.lorem.slug(),
       })),
-      304: null,
+      '304': null,
     },
   },
   '/orgs/:org': {
     get: {
-      200: {
+      '200': {
         login: faker.lorem.slug(),
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
@@ -10287,7 +10287,7 @@ export const factories = {
         members_can_fork_private_repositories: faker.datatype.boolean(),
         updated_at: faker.date.recent(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -10295,7 +10295,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         login: faker.lorem.slug(),
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
@@ -10350,18 +10350,18 @@ export const factories = {
         members_can_fork_private_repositories: faker.datatype.boolean(),
         updated_at: faker.date.recent(),
       },
-      409: {
+      '409': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: null,
+      '422': null,
     },
   },
   '/orgs/:org/actions/permissions': {
     get: {
-      200: {
+      '200': {
         enabled_repositories: faker.random.arrayElement([
           'all',
           'none',
@@ -10376,11 +10376,11 @@ export const factories = {
         selected_actions_url: faker.lorem.slug(),
       },
     },
-    put: { 204: null },
+    put: { '204': null },
   },
   '/orgs/:org/actions/permissions/repositories': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         repositories: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -10651,26 +10651,26 @@ export const factories = {
         })),
       },
     },
-    put: { 204: null },
+    put: { '204': null },
   },
   '/orgs/:org/actions/permissions/repositories/:repositoryId': {
-    put: { 204: null },
-    delete: { 204: null },
+    put: { '204': null },
+    delete: { '204': null },
   },
   '/orgs/:org/actions/permissions/selected-actions': {
     get: {
-      200: {
+      '200': {
         github_owned_allowed: faker.datatype.boolean(),
         patterns_allowed: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => faker.lorem.slug()),
       },
     },
-    put: { 204: null },
+    put: { '204': null },
   },
   '/orgs/:org/actions/runner-groups': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         runner_groups: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -10688,7 +10688,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         visibility: faker.lorem.slug(),
@@ -10703,7 +10703,7 @@ export const factories = {
   },
   '/orgs/:org/actions/runner-groups/:runnerGroupId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         visibility: faker.lorem.slug(),
@@ -10716,7 +10716,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         visibility: faker.lorem.slug(),
@@ -10728,11 +10728,11 @@ export const factories = {
         allows_public_repositories: faker.datatype.boolean(),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/orgs/:org/actions/runner-groups/:runnerGroupId/repositories': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         repositories: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -11132,13 +11132,13 @@ export const factories = {
         })),
       },
     },
-    put: { 204: null },
+    put: { '204': null },
   },
   '/orgs/:org/actions/runner-groups/:runnerGroupId/repositories/:repositoryId':
-    { put: { 204: null }, delete: { 204: null } },
+    { put: { '204': null }, delete: { '204': null } },
   '/orgs/:org/actions/runner-groups/:runnerGroupId/runners': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         runners: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -11160,15 +11160,15 @@ export const factories = {
         })),
       },
     },
-    put: { 204: null },
+    put: { '204': null },
   },
   '/orgs/:org/actions/runner-groups/:runnerGroupId/runners/:runnerId': {
-    put: { 204: null },
-    delete: { 204: null },
+    put: { '204': null },
+    delete: { '204': null },
   },
   '/orgs/:org/actions/runners': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         runners: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -11193,7 +11193,7 @@ export const factories = {
   },
   '/orgs/:org/actions/runners/downloads': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         os: faker.lorem.slug(),
@@ -11207,7 +11207,7 @@ export const factories = {
   },
   '/orgs/:org/actions/runners/registration-token': {
     post: {
-      201: {
+      '201': {
         token: faker.lorem.slug(),
         expires_at: faker.date.recent(),
         permissions: {},
@@ -11485,7 +11485,7 @@ export const factories = {
   },
   '/orgs/:org/actions/runners/remove-token': {
     post: {
-      201: {
+      '201': {
         token: faker.lorem.slug(),
         expires_at: faker.date.recent(),
         permissions: {},
@@ -11763,7 +11763,7 @@ export const factories = {
   },
   '/orgs/:org/actions/runners/:runnerId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         os: faker.lorem.slug(),
@@ -11778,11 +11778,11 @@ export const factories = {
         })),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/orgs/:org/actions/secrets': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         secrets: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -11798,7 +11798,7 @@ export const factories = {
   },
   '/orgs/:org/actions/secrets/public-key': {
     get: {
-      200: {
+      '200': {
         key_id: faker.lorem.slug(),
         key: faker.lorem.slug(),
         id: faker.datatype.number(),
@@ -11810,7 +11810,7 @@ export const factories = {
   },
   '/orgs/:org/actions/secrets/:secretName': {
     get: {
-      200: {
+      '200': {
         name: faker.lorem.slug(),
         created_at: faker.date.recent(),
         updated_at: faker.date.recent(),
@@ -11818,12 +11818,12 @@ export const factories = {
         selected_repositories_url: faker.internet.url(),
       },
     },
-    put: { 201: {}, 204: null },
-    delete: { 204: null },
+    put: { '201': {}, '204': null },
+    delete: { '204': null },
   },
   '/orgs/:org/actions/secrets/:secretName/repositories': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         repositories: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -12223,15 +12223,15 @@ export const factories = {
         })),
       },
     },
-    put: { 204: null },
+    put: { '204': null },
   },
   '/orgs/:org/actions/secrets/:secretName/repositories/:repositoryId': {
-    put: { 204: null, 409: null },
-    delete: { 204: null, 409: null },
+    put: { '204': null, '409': null },
+    delete: { '204': null, '409': null },
   },
   '/orgs/:org/audit-log': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         '@timestamp': faker.datatype.number(),
@@ -12289,7 +12289,7 @@ export const factories = {
   },
   '/orgs/:org/events': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.lorem.slug(),
@@ -12955,7 +12955,7 @@ export const factories = {
   },
   '/orgs/:org/hooks': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -12977,7 +12977,7 @@ export const factories = {
         created_at: faker.date.recent(),
         type: faker.lorem.slug(),
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -12985,7 +12985,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         url: faker.internet.url(),
         ping_url: faker.internet.url(),
@@ -13005,13 +13005,13 @@ export const factories = {
         created_at: faker.date.recent(),
         type: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -13029,7 +13029,7 @@ export const factories = {
   },
   '/orgs/:org/hooks/:hookId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         url: faker.internet.url(),
         ping_url: faker.internet.url(),
@@ -13049,7 +13049,7 @@ export const factories = {
         created_at: faker.date.recent(),
         type: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -13057,7 +13057,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         url: faker.internet.url(),
         ping_url: faker.internet.url(),
@@ -13077,13 +13077,13 @@ export const factories = {
         created_at: faker.date.recent(),
         type: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -13099,8 +13099,8 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      404: {
+      '204': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -13110,7 +13110,7 @@ export const factories = {
   },
   '/orgs/:org/hooks/:hookId/config': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         content_type: faker.lorem.slug(),
         secret: faker.lorem.slug(),
@@ -13118,7 +13118,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         content_type: faker.lorem.slug(),
         secret: faker.lorem.slug(),
@@ -13128,7 +13128,7 @@ export const factories = {
   },
   '/orgs/:org/hooks/:hookId/deliveries': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -13143,13 +13143,13 @@ export const factories = {
         installation_id: faker.datatype.number(),
         repository_id: faker.datatype.number(),
       })),
-      400: {
+      '400': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -13167,7 +13167,7 @@ export const factories = {
   },
   '/orgs/:org/hooks/:hookId/deliveries/:deliveryId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         guid: faker.lorem.slug(),
         delivered_at: faker.date.recent(),
@@ -13189,13 +13189,13 @@ export const factories = {
           payload: faker.lorem.slug(),
         },
       },
-      400: {
+      '400': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -13213,14 +13213,14 @@ export const factories = {
   },
   '/orgs/:org/hooks/:hookId/deliveries/:deliveryId/attempts': {
     post: {
-      202: {},
-      400: {
+      '202': {},
+      '400': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -13238,8 +13238,8 @@ export const factories = {
   },
   '/orgs/:org/hooks/:hookId/pings': {
     post: {
-      204: null,
-      404: {
+      '204': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -13249,7 +13249,7 @@ export const factories = {
   },
   '/orgs/:org/installation': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         account: null,
         repository_selection: faker.random.arrayElement(['all', 'selected']),
@@ -13350,7 +13350,7 @@ export const factories = {
   },
   '/orgs/:org/installations': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         installations: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -13463,7 +13463,7 @@ export const factories = {
   },
   '/orgs/:org/issues': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -13971,7 +13971,7 @@ export const factories = {
           rocket: faker.datatype.number(),
         },
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -13981,7 +13981,7 @@ export const factories = {
   },
   '/orgs/:org/members': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         name: faker.lorem.slug(),
@@ -14006,8 +14006,8 @@ export const factories = {
         site_admin: faker.datatype.boolean(),
         starred_at: faker.lorem.slug(),
       })),
-      302: null,
-      422: {
+      '302': null,
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -14024,10 +14024,10 @@ export const factories = {
     },
   },
   '/orgs/:org/members/:username': {
-    get: { 204: null, 302: null, 404: null },
+    get: { '204': null, '302': null, '404': null },
     delete: {
-      204: null,
-      403: {
+      '204': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -14037,7 +14037,7 @@ export const factories = {
   },
   '/orgs/:org/memberships/:username': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         state: faker.random.arrayElement(['active', 'pending']),
         role: faker.random.arrayElement(['admin', 'member', 'billing_manager']),
@@ -14083,13 +14083,13 @@ export const factories = {
           can_create_repository: faker.datatype.boolean(),
         },
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -14097,7 +14097,7 @@ export const factories = {
       },
     },
     put: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         state: faker.random.arrayElement(['active', 'pending']),
         role: faker.random.arrayElement(['admin', 'member', 'billing_manager']),
@@ -14143,13 +14143,13 @@ export const factories = {
           can_create_repository: faker.datatype.boolean(),
         },
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -14165,14 +14165,14 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      403: {
+      '204': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -14182,7 +14182,7 @@ export const factories = {
   },
   '/orgs/:org/outside_collaborators': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         name: faker.lorem.slug(),
@@ -14211,10 +14211,10 @@ export const factories = {
   },
   '/orgs/:org/outside_collaborators/:username': {
     put: {
-      202: {},
-      204: null,
-      403: null,
-      404: {
+      '202': {},
+      '204': null,
+      '403': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -14222,8 +14222,8 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      422: {
+      '204': null,
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
@@ -14231,7 +14231,7 @@ export const factories = {
   },
   '/orgs/:org/pre-receive-hooks': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -14244,7 +14244,7 @@ export const factories = {
   },
   '/orgs/:org/pre-receive-hooks/:preReceiveHookId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         enforcement: faker.lorem.slug(),
@@ -14253,7 +14253,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         enforcement: faker.lorem.slug(),
@@ -14262,7 +14262,7 @@ export const factories = {
       },
     },
     delete: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         enforcement: faker.lorem.slug(),
@@ -14273,7 +14273,7 @@ export const factories = {
   },
   '/orgs/:org/projects': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         owner_url: faker.internet.url(),
@@ -14319,7 +14319,7 @@ export const factories = {
         ]),
         private: faker.datatype.boolean(),
       })),
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -14328,7 +14328,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         owner_url: faker.internet.url(),
         url: faker.internet.url(),
         html_url: faker.internet.url(),
@@ -14372,31 +14372,31 @@ export const factories = {
         ]),
         private: faker.datatype.boolean(),
       },
-      401: {
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -14407,7 +14407,7 @@ export const factories = {
   },
   '/orgs/:org/public_members': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         name: faker.lorem.slug(),
@@ -14435,21 +14435,21 @@ export const factories = {
     },
   },
   '/orgs/:org/public_members/:username': {
-    get: { 204: null, 404: null },
+    get: { '204': null, '404': null },
     put: {
-      204: null,
-      403: {
+      '204': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/orgs/:org/repos': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -14845,7 +14845,7 @@ export const factories = {
       })),
     },
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         name: faker.lorem.slug(),
@@ -15108,13 +15108,13 @@ export const factories = {
         master_branch: faker.lorem.slug(),
         starred_at: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -15132,7 +15132,7 @@ export const factories = {
   },
   '/orgs/:org/secret-scanning/alerts': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         number: faker.datatype.number(),
@@ -15569,13 +15569,13 @@ export const factories = {
           allow_forking: faker.datatype.boolean(),
         },
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      503: {
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -15584,7 +15584,7 @@ export const factories = {
   },
   '/orgs/:org/teams': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -15620,7 +15620,7 @@ export const factories = {
           ldap_dn: faker.lorem.slug(),
         },
       })),
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -15628,7 +15628,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -15715,13 +15715,13 @@ export const factories = {
         },
         ldap_dn: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -15739,7 +15739,7 @@ export const factories = {
   },
   '/orgs/:org/teams/:teamSlug': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -15826,7 +15826,7 @@ export const factories = {
         },
         ldap_dn: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -15834,7 +15834,7 @@ export const factories = {
       },
     },
     patch: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -15922,11 +15922,11 @@ export const factories = {
         ldap_dn: faker.lorem.slug(),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/orgs/:org/teams/:teamSlug/discussions': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         author: {
@@ -15983,7 +15983,7 @@ export const factories = {
       })),
     },
     post: {
-      201: {
+      '201': {
         author: {
           name: faker.lorem.slug(),
           email: faker.lorem.slug(),
@@ -16040,7 +16040,7 @@ export const factories = {
   },
   '/orgs/:org/teams/:teamSlug/discussions/:discussionNumber': {
     get: {
-      200: {
+      '200': {
         author: {
           name: faker.lorem.slug(),
           email: faker.lorem.slug(),
@@ -16095,7 +16095,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         author: {
           name: faker.lorem.slug(),
           email: faker.lorem.slug(),
@@ -16149,11 +16149,11 @@ export const factories = {
         },
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/orgs/:org/teams/:teamSlug/discussions/:discussionNumber/comments': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         author: {
@@ -16205,7 +16205,7 @@ export const factories = {
       })),
     },
     post: {
-      201: {
+      '201': {
         author: {
           name: faker.lorem.slug(),
           email: faker.lorem.slug(),
@@ -16258,7 +16258,7 @@ export const factories = {
   '/orgs/:org/teams/:teamSlug/discussions/:discussionNumber/comments/:commentNumber':
     {
       get: {
-        200: {
+        '200': {
           author: {
             name: faker.lorem.slug(),
             email: faker.lorem.slug(),
@@ -16308,7 +16308,7 @@ export const factories = {
         },
       },
       patch: {
-        200: {
+        '200': {
           author: {
             name: faker.lorem.slug(),
             email: faker.lorem.slug(),
@@ -16357,12 +16357,12 @@ export const factories = {
           },
         },
       },
-      delete: { 204: null },
+      delete: { '204': null },
     },
   '/orgs/:org/teams/:teamSlug/discussions/:discussionNumber/comments/:commentNumber/reactions':
     {
       get: {
-        200: [
+        '200': [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => ({
           id: faker.datatype.number(),
@@ -16404,7 +16404,7 @@ export const factories = {
         })),
       },
       post: {
-        200: {
+        '200': {
           id: faker.datatype.number(),
           node_id: faker.lorem.slug(),
           user: {
@@ -16442,7 +16442,7 @@ export const factories = {
           ]),
           created_at: faker.date.recent(),
         },
-        201: {
+        '201': {
           id: faker.datatype.number(),
           node_id: faker.lorem.slug(),
           user: {
@@ -16483,10 +16483,10 @@ export const factories = {
       },
     },
   '/orgs/:org/teams/:teamSlug/discussions/:discussionNumber/comments/:commentNumber/reactions/:reactionId':
-    { delete: { 204: null } },
+    { delete: { '204': null } },
   '/orgs/:org/teams/:teamSlug/discussions/:discussionNumber/reactions': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -16528,7 +16528,7 @@ export const factories = {
       })),
     },
     post: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         user: {
@@ -16566,7 +16566,7 @@ export const factories = {
         ]),
         created_at: faker.date.recent(),
       },
-      201: {
+      '201': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         user: {
@@ -16607,10 +16607,10 @@ export const factories = {
     },
   },
   '/orgs/:org/teams/:teamSlug/discussions/:discussionNumber/reactions/:reactionId':
-    { delete: { 204: null } },
+    { delete: { '204': null } },
   '/orgs/:org/teams/:teamSlug/members': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         name: faker.lorem.slug(),
@@ -16639,27 +16639,27 @@ export const factories = {
   },
   '/orgs/:org/teams/:teamSlug/memberships/:username': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         role: faker.random.arrayElement(['member', 'maintainer']),
         state: faker.random.arrayElement(['active', 'pending']),
       },
-      404: null,
+      '404': null,
     },
     put: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         role: faker.random.arrayElement(['member', 'maintainer']),
         state: faker.random.arrayElement(['active', 'pending']),
       },
-      403: null,
-      422: null,
+      '403': null,
+      '422': null,
     },
-    delete: { 204: null, 403: null },
+    delete: { '204': null, '403': null },
   },
   '/orgs/:org/teams/:teamSlug/projects': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         owner_url: faker.lorem.slug(),
@@ -16709,7 +16709,7 @@ export const factories = {
   },
   '/orgs/:org/teams/:teamSlug/projects/:projectId': {
     get: {
-      200: {
+      '200': {
         owner_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         html_url: faker.lorem.slug(),
@@ -16753,20 +16753,20 @@ export const factories = {
           admin: faker.datatype.boolean(),
         },
       },
-      404: null,
+      '404': null,
     },
     put: {
-      204: null,
-      403: {
+      '204': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/orgs/:org/teams/:teamSlug/repos': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -17164,7 +17164,7 @@ export const factories = {
   },
   '/orgs/:org/teams/:teamSlug/repos/:owner/:repo': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         name: faker.lorem.slug(),
@@ -17555,15 +17555,15 @@ export const factories = {
         watchers: faker.datatype.number(),
         master_branch: faker.lorem.slug(),
       },
-      204: null,
-      404: null,
+      '204': null,
+      '404': null,
     },
-    put: { 204: null },
-    delete: { 204: null },
+    put: { '204': null },
+    delete: { '204': null },
   },
   '/orgs/:org/teams/:teamSlug/teams': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -17603,7 +17603,7 @@ export const factories = {
   },
   '/projects/columns/cards/:cardId': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
@@ -17640,20 +17640,20 @@ export const factories = {
         content_url: faker.internet.url(),
         project_url: faker.internet.url(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -17661,7 +17661,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
@@ -17698,26 +17698,26 @@ export const factories = {
         content_url: faker.internet.url(),
         project_url: faker.internet.url(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -17726,22 +17726,22 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      304: null,
-      401: {
+      '204': null,
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => faker.lorem.slug()),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -17751,15 +17751,15 @@ export const factories = {
   },
   '/projects/columns/cards/:cardId/moves': {
     post: {
-      201: {},
-      304: null,
-      401: {
+      '201': {},
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -17771,7 +17771,7 @@ export const factories = {
           field: faker.lorem.slug(),
         })),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -17785,7 +17785,7 @@ export const factories = {
           value: null,
         })),
       },
-      503: {
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -17800,7 +17800,7 @@ export const factories = {
   },
   '/projects/columns/:columnId': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         project_url: faker.internet.url(),
         cards_url: faker.internet.url(),
@@ -17810,20 +17810,20 @@ export const factories = {
         created_at: faker.date.recent(),
         updated_at: faker.date.recent(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -17831,7 +17831,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         project_url: faker.internet.url(),
         cards_url: faker.internet.url(),
@@ -17841,14 +17841,14 @@ export const factories = {
         created_at: faker.date.recent(),
         updated_at: faker.date.recent(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -17856,15 +17856,15 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      304: null,
-      401: {
+      '204': null,
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -17874,7 +17874,7 @@ export const factories = {
   },
   '/projects/columns/:columnId/cards': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.internet.url(),
@@ -17913,14 +17913,14 @@ export const factories = {
         content_url: faker.internet.url(),
         project_url: faker.internet.url(),
       })),
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -17928,7 +17928,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         url: faker.internet.url(),
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
@@ -17965,21 +17965,21 @@ export const factories = {
         content_url: faker.internet.url(),
         project_url: faker.internet.url(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: null,
-      503: {
+      '422': null,
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -17994,21 +17994,21 @@ export const factories = {
   },
   '/projects/columns/:columnId/moves': {
     post: {
-      201: {},
-      304: null,
-      401: {
+      '201': {},
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -18019,7 +18019,7 @@ export const factories = {
   },
   '/projects/:projectId': {
     get: {
-      200: {
+      '200': {
         owner_url: faker.internet.url(),
         url: faker.internet.url(),
         html_url: faker.internet.url(),
@@ -18063,14 +18063,14 @@ export const factories = {
         ]),
         private: faker.datatype.boolean(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -18078,7 +18078,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         owner_url: faker.internet.url(),
         url: faker.internet.url(),
         html_url: faker.internet.url(),
@@ -18122,28 +18122,28 @@ export const factories = {
         ]),
         private: faker.datatype.boolean(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => faker.lorem.slug()),
       },
-      404: null,
-      410: {
+      '404': null,
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -18152,28 +18152,28 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      304: null,
-      401: {
+      '204': null,
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => faker.lorem.slug()),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -18183,7 +18183,7 @@ export const factories = {
   },
   '/projects/:projectId/collaborators': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         name: faker.lorem.slug(),
@@ -18208,26 +18208,26 @@ export const factories = {
         site_admin: faker.datatype.boolean(),
         starred_at: faker.lorem.slug(),
       })),
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -18245,27 +18245,27 @@ export const factories = {
   },
   '/projects/:projectId/collaborators/:username': {
     put: {
-      204: null,
-      304: null,
-      401: {
+      '204': null,
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -18281,27 +18281,27 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      304: null,
-      401: {
+      '204': null,
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -18319,7 +18319,7 @@ export const factories = {
   },
   '/projects/:projectId/collaborators/:username/permission': {
     get: {
-      200: {
+      '200': {
         permission: faker.lorem.slug(),
         user: {
           name: faker.lorem.slug(),
@@ -18345,26 +18345,26 @@ export const factories = {
           starred_at: faker.lorem.slug(),
         },
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -18382,7 +18382,7 @@ export const factories = {
   },
   '/projects/:projectId/columns': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.internet.url(),
@@ -18394,14 +18394,14 @@ export const factories = {
         created_at: faker.date.recent(),
         updated_at: faker.date.recent(),
       })),
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -18409,7 +18409,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         url: faker.internet.url(),
         project_url: faker.internet.url(),
         cards_url: faker.internet.url(),
@@ -18419,20 +18419,20 @@ export const factories = {
         created_at: faker.date.recent(),
         updated_at: faker.date.recent(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -18443,7 +18443,7 @@ export const factories = {
   },
   '/rate_limit': {
     get: {
-      200: {
+      '200': {
         resources: {
           core: {
             limit: faker.datatype.number(),
@@ -18501,8 +18501,8 @@ export const factories = {
           used: faker.datatype.number(),
         },
       },
-      304: null,
-      404: {
+      '304': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -18512,21 +18512,21 @@ export const factories = {
   },
   '/reactions/:reactionId': {
     delete: {
-      204: null,
-      304: null,
-      401: {
+      '204': null,
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -18536,7 +18536,7 @@ export const factories = {
   },
   '/repos/:owner/:repo': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         name: faker.lorem.slug(),
@@ -19498,19 +19498,19 @@ export const factories = {
           },
         },
       },
-      301: {
+      '301': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -19518,7 +19518,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         name: faker.lorem.slug(),
@@ -20480,25 +20480,25 @@ export const factories = {
           },
         },
       },
-      307: {
+      '307': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -20514,18 +20514,18 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      307: {
+      '204': null,
+      '307': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -20535,7 +20535,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/actions/artifacts': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         artifacts: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -20556,7 +20556,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/actions/artifacts/:artifactId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         name: faker.lorem.slug(),
@@ -20569,14 +20569,14 @@ export const factories = {
         updated_at: faker.date.recent(),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/repos/:owner/:repo/actions/artifacts/:artifactId/:archiveFormat': {
-    get: { 302: null },
+    get: { '302': null },
   },
   '/repos/:owner/:repo/actions/jobs/:jobId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         run_id: faker.datatype.number(),
         run_url: faker.lorem.slug(),
@@ -20619,10 +20619,10 @@ export const factories = {
       },
     },
   },
-  '/repos/:owner/:repo/actions/jobs/:jobId/logs': { get: { 302: null } },
+  '/repos/:owner/:repo/actions/jobs/:jobId/logs': { get: { '302': null } },
   '/repos/:owner/:repo/actions/permissions': {
     get: {
-      200: {
+      '200': {
         enabled: faker.datatype.boolean(),
         allowed_actions: faker.random.arrayElement([
           'all',
@@ -20632,22 +20632,22 @@ export const factories = {
         selected_actions_url: faker.lorem.slug(),
       },
     },
-    put: { 204: null },
+    put: { '204': null },
   },
   '/repos/:owner/:repo/actions/permissions/selected-actions': {
     get: {
-      200: {
+      '200': {
         github_owned_allowed: faker.datatype.boolean(),
         patterns_allowed: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => faker.lorem.slug()),
       },
     },
-    put: { 204: null },
+    put: { '204': null },
   },
   '/repos/:owner/:repo/actions/runners': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         runners: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -20672,7 +20672,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/actions/runners/downloads': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         os: faker.lorem.slug(),
@@ -20686,7 +20686,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/actions/runners/registration-token': {
     post: {
-      201: {
+      '201': {
         token: faker.lorem.slug(),
         expires_at: faker.date.recent(),
         permissions: {},
@@ -20964,7 +20964,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/actions/runners/remove-token': {
     post: {
-      201: {
+      '201': {
         token: faker.lorem.slug(),
         expires_at: faker.date.recent(),
         permissions: {},
@@ -21242,7 +21242,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/actions/runners/:runnerId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         os: faker.lorem.slug(),
@@ -21257,11 +21257,11 @@ export const factories = {
         })),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/repos/:owner/:repo/actions/runs': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         workflow_runs: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -21274,7 +21274,6 @@ export const factories = {
           head_branch: faker.lorem.slug(),
           head_sha: faker.lorem.slug(),
           run_number: faker.datatype.number(),
-          run_attempt: faker.datatype.number(),
           event: faker.lorem.slug(),
           status: faker.lorem.slug(),
           conclusion: faker.lorem.slug(),
@@ -21310,7 +21309,6 @@ export const factories = {
           })),
           created_at: faker.date.recent(),
           updated_at: faker.date.recent(),
-          run_started_at: faker.date.recent(),
           jobs_url: faker.lorem.slug(),
           logs_url: faker.lorem.slug(),
           check_suite_url: faker.lorem.slug(),
@@ -22128,7 +22126,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/actions/runs/:runId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         node_id: faker.lorem.slug(),
@@ -22137,7 +22135,6 @@ export const factories = {
         head_branch: faker.lorem.slug(),
         head_sha: faker.lorem.slug(),
         run_number: faker.datatype.number(),
-        run_attempt: faker.datatype.number(),
         event: faker.lorem.slug(),
         status: faker.lorem.slug(),
         conclusion: faker.lorem.slug(),
@@ -22171,7 +22168,6 @@ export const factories = {
         })),
         created_at: faker.date.recent(),
         updated_at: faker.date.recent(),
-        run_started_at: faker.date.recent(),
         jobs_url: faker.lorem.slug(),
         logs_url: faker.lorem.slug(),
         check_suite_url: faker.lorem.slug(),
@@ -22985,11 +22981,11 @@ export const factories = {
         head_repository_id: faker.datatype.number(),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/repos/:owner/:repo/actions/runs/:runId/approvals': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         environments: [
@@ -23033,7 +23029,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/actions/runs/:runId/artifacts': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         artifacts: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -23054,8 +23050,8 @@ export const factories = {
   },
   '/repos/:owner/:repo/actions/runs/:runId/cancel': {
     post: {
-      202: {},
-      409: {
+      '202': {},
+      '409': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -23065,7 +23061,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/actions/runs/:runId/jobs': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         jobs: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -23118,16 +23114,16 @@ export const factories = {
     },
   },
   '/repos/:owner/:repo/actions/runs/:runId/logs': {
-    get: { 302: null },
+    get: { '302': null },
     delete: {
-      204: null,
-      403: {
+      '204': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      500: {
+      '500': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -23137,7 +23133,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/actions/runs/:runId/pending_deployments': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         environment: {
@@ -23159,7 +23155,7 @@ export const factories = {
       })),
     },
     post: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.internet.url(),
@@ -23255,10 +23251,10 @@ export const factories = {
       })),
     },
   },
-  '/repos/:owner/:repo/actions/runs/:runId/rerun': { post: { 201: {} } },
+  '/repos/:owner/:repo/actions/runs/:runId/rerun': { post: { '201': {} } },
   '/repos/:owner/:repo/actions/secrets': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         secrets: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -23272,7 +23268,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/actions/secrets/public-key': {
     get: {
-      200: {
+      '200': {
         key_id: faker.lorem.slug(),
         key: faker.lorem.slug(),
         id: faker.datatype.number(),
@@ -23284,18 +23280,18 @@ export const factories = {
   },
   '/repos/:owner/:repo/actions/secrets/:secretName': {
     get: {
-      200: {
+      '200': {
         name: faker.lorem.slug(),
         created_at: faker.date.recent(),
         updated_at: faker.date.recent(),
       },
     },
-    put: { 201: {}, 204: null },
-    delete: { 204: null },
+    put: { '201': {}, '204': null },
+    delete: { '204': null },
   },
   '/repos/:owner/:repo/actions/workflows': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         workflows: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -23323,7 +23319,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/actions/workflows/:workflowId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         name: faker.lorem.slug(),
@@ -23345,17 +23341,17 @@ export const factories = {
     },
   },
   '/repos/:owner/:repo/actions/workflows/:workflowId/disable': {
-    put: { 204: null },
+    put: { '204': null },
   },
   '/repos/:owner/:repo/actions/workflows/:workflowId/dispatches': {
-    post: { 204: null },
+    post: { '204': null },
   },
   '/repos/:owner/:repo/actions/workflows/:workflowId/enable': {
-    put: { 204: null },
+    put: { '204': null },
   },
   '/repos/:owner/:repo/actions/workflows/:workflowId/runs': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         workflow_runs: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -23368,7 +23364,6 @@ export const factories = {
           head_branch: faker.lorem.slug(),
           head_sha: faker.lorem.slug(),
           run_number: faker.datatype.number(),
-          run_attempt: faker.datatype.number(),
           event: faker.lorem.slug(),
           status: faker.lorem.slug(),
           conclusion: faker.lorem.slug(),
@@ -23404,7 +23399,6 @@ export const factories = {
           })),
           created_at: faker.date.recent(),
           updated_at: faker.date.recent(),
-          run_started_at: faker.date.recent(),
           jobs_url: faker.lorem.slug(),
           logs_url: faker.lorem.slug(),
           check_suite_url: faker.lorem.slug(),
@@ -24222,7 +24216,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/assignees': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         name: faker.lorem.slug(),
@@ -24247,7 +24241,7 @@ export const factories = {
         site_admin: faker.datatype.boolean(),
         starred_at: faker.lorem.slug(),
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -24257,8 +24251,8 @@ export const factories = {
   },
   '/repos/:owner/:repo/assignees/:assignee': {
     get: {
-      204: null,
-      404: {
+      '204': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -24268,7 +24262,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/autolinks': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -24277,12 +24271,12 @@ export const factories = {
       })),
     },
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         key_prefix: faker.lorem.slug(),
         url_template: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -24300,12 +24294,12 @@ export const factories = {
   },
   '/repos/:owner/:repo/autolinks/:autolinkId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         key_prefix: faker.lorem.slug(),
         url_template: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -24313,8 +24307,8 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      404: {
+      '204': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -24324,7 +24318,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/branches': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         name: faker.lorem.slug(),
@@ -24547,7 +24541,7 @@ export const factories = {
         },
         protection_url: faker.internet.url(),
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -24557,7 +24551,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/branches/:branch': {
     get: {
-      200: {
+      '200': {
         name: faker.lorem.slug(),
         commit: {
           url: faker.internet.url(),
@@ -24897,19 +24891,19 @@ export const factories = {
         pattern: faker.lorem.slug(),
         required_approving_review_count: faker.datatype.number(),
       },
-      301: {
+      '301': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      415: {
+      '415': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
@@ -24917,7 +24911,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/branches/:branch/protection': {
     get: {
-      200: {
+      '200': {
         url: faker.lorem.slug(),
         enabled: faker.datatype.boolean(),
         required_status_checks: {
@@ -25129,7 +25123,7 @@ export const factories = {
           enabled: faker.datatype.boolean(),
         },
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -25137,7 +25131,7 @@ export const factories = {
       },
     },
     put: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         required_status_checks: {
           url: faker.internet.url(),
@@ -25345,19 +25339,19 @@ export const factories = {
           enabled: faker.datatype.boolean(),
         },
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -25366,8 +25360,8 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      403: {
+      '204': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -25377,20 +25371,20 @@ export const factories = {
   },
   '/repos/:owner/:repo/branches/:branch/protection/enforce_admins': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         enabled: faker.datatype.boolean(),
       },
     },
     post: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         enabled: faker.datatype.boolean(),
       },
     },
     delete: {
-      204: null,
-      404: {
+      '204': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -25401,7 +25395,7 @@ export const factories = {
   '/repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews':
     {
       get: {
-        200: {
+        '200': {
           url: faker.internet.url(),
           dismissal_restrictions: {
             users: [
@@ -25479,7 +25473,7 @@ export const factories = {
         },
       },
       patch: {
-        200: {
+        '200': {
           url: faker.internet.url(),
           dismissal_restrictions: {
             users: [
@@ -25555,7 +25549,7 @@ export const factories = {
           require_code_owner_reviews: faker.datatype.boolean(),
           required_approving_review_count: faker.datatype.number(),
         },
-        422: {
+        '422': {
           message: faker.lorem.slug(),
           documentation_url: faker.lorem.slug(),
           errors: [
@@ -25573,8 +25567,8 @@ export const factories = {
         },
       },
       delete: {
-        204: null,
-        404: {
+        '204': null,
+        '404': {
           message: faker.lorem.slug(),
           documentation_url: faker.lorem.slug(),
           url: faker.lorem.slug(),
@@ -25584,11 +25578,11 @@ export const factories = {
     },
   '/repos/:owner/:repo/branches/:branch/protection/required_signatures': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         enabled: faker.datatype.boolean(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -25596,11 +25590,11 @@ export const factories = {
       },
     },
     post: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         enabled: faker.datatype.boolean(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -25608,8 +25602,8 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      404: {
+      '204': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -25619,7 +25613,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/branches/:branch/protection/required_status_checks': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         strict: faker.datatype.boolean(),
         contexts: [
@@ -25627,7 +25621,7 @@ export const factories = {
         ].map(_ => faker.lorem.slug()),
         contexts_url: faker.internet.url(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -25635,7 +25629,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         strict: faker.datatype.boolean(),
         contexts: [
@@ -25643,13 +25637,13 @@ export const factories = {
         ].map(_ => faker.lorem.slug()),
         contexts_url: faker.internet.url(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -25664,15 +25658,15 @@ export const factories = {
         })),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts':
     {
       get: {
-        200: [
+        '200': [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => faker.lorem.slug()),
-        404: {
+        '404': {
           message: faker.lorem.slug(),
           documentation_url: faker.lorem.slug(),
           url: faker.lorem.slug(),
@@ -25680,22 +25674,22 @@ export const factories = {
         },
       },
       post: {
-        200: [
+        '200': [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => faker.lorem.slug()),
-        403: {
+        '403': {
           message: faker.lorem.slug(),
           documentation_url: faker.lorem.slug(),
           url: faker.lorem.slug(),
           status: faker.lorem.slug(),
         },
-        404: {
+        '404': {
           message: faker.lorem.slug(),
           documentation_url: faker.lorem.slug(),
           url: faker.lorem.slug(),
           status: faker.lorem.slug(),
         },
-        422: {
+        '422': {
           message: faker.lorem.slug(),
           documentation_url: faker.lorem.slug(),
           errors: [
@@ -25713,16 +25707,16 @@ export const factories = {
         },
       },
       put: {
-        200: [
+        '200': [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => faker.lorem.slug()),
-        404: {
+        '404': {
           message: faker.lorem.slug(),
           documentation_url: faker.lorem.slug(),
           url: faker.lorem.slug(),
           status: faker.lorem.slug(),
         },
-        422: {
+        '422': {
           message: faker.lorem.slug(),
           documentation_url: faker.lorem.slug(),
           errors: [
@@ -25740,16 +25734,16 @@ export const factories = {
         },
       },
       delete: {
-        200: [
+        '200': [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => faker.lorem.slug()),
-        404: {
+        '404': {
           message: faker.lorem.slug(),
           documentation_url: faker.lorem.slug(),
           url: faker.lorem.slug(),
           status: faker.lorem.slug(),
         },
-        422: {
+        '422': {
           message: faker.lorem.slug(),
           documentation_url: faker.lorem.slug(),
           errors: [
@@ -25769,7 +25763,7 @@ export const factories = {
     },
   '/repos/:owner/:repo/branches/:branch/protection/restrictions': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         users_url: faker.internet.url(),
         teams_url: faker.internet.url(),
@@ -25862,18 +25856,18 @@ export const factories = {
           ].map(_ => faker.lorem.slug()),
         })),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/repos/:owner/:repo/branches/:branch/protection/restrictions/apps': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -25924,7 +25918,7 @@ export const factories = {
         webhook_secret: faker.lorem.slug(),
         pem: faker.lorem.slug(),
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -25932,7 +25926,7 @@ export const factories = {
       },
     },
     post: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -25983,7 +25977,7 @@ export const factories = {
         webhook_secret: faker.lorem.slug(),
         pem: faker.lorem.slug(),
       })),
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -25999,7 +25993,7 @@ export const factories = {
       },
     },
     put: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -26050,7 +26044,7 @@ export const factories = {
         webhook_secret: faker.lorem.slug(),
         pem: faker.lorem.slug(),
       })),
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -26066,7 +26060,7 @@ export const factories = {
       },
     },
     delete: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -26117,7 +26111,7 @@ export const factories = {
         webhook_secret: faker.lorem.slug(),
         pem: faker.lorem.slug(),
       })),
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -26135,7 +26129,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/branches/:branch/protection/restrictions/teams': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -26171,7 +26165,7 @@ export const factories = {
           ldap_dn: faker.lorem.slug(),
         },
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -26179,7 +26173,7 @@ export const factories = {
       },
     },
     post: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -26215,7 +26209,7 @@ export const factories = {
           ldap_dn: faker.lorem.slug(),
         },
       })),
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -26231,7 +26225,7 @@ export const factories = {
       },
     },
     put: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -26267,7 +26261,7 @@ export const factories = {
           ldap_dn: faker.lorem.slug(),
         },
       })),
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -26283,7 +26277,7 @@ export const factories = {
       },
     },
     delete: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -26319,7 +26313,7 @@ export const factories = {
           ldap_dn: faker.lorem.slug(),
         },
       })),
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -26337,7 +26331,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/branches/:branch/protection/restrictions/users': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         name: faker.lorem.slug(),
@@ -26362,7 +26356,7 @@ export const factories = {
         site_admin: faker.datatype.boolean(),
         starred_at: faker.lorem.slug(),
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -26370,7 +26364,7 @@ export const factories = {
       },
     },
     post: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         name: faker.lorem.slug(),
@@ -26395,7 +26389,7 @@ export const factories = {
         site_admin: faker.datatype.boolean(),
         starred_at: faker.lorem.slug(),
       })),
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -26411,7 +26405,7 @@ export const factories = {
       },
     },
     put: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         name: faker.lorem.slug(),
@@ -26436,7 +26430,7 @@ export const factories = {
         site_admin: faker.datatype.boolean(),
         starred_at: faker.lorem.slug(),
       })),
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -26452,7 +26446,7 @@ export const factories = {
       },
     },
     delete: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         name: faker.lorem.slug(),
@@ -26477,7 +26471,7 @@ export const factories = {
         site_admin: faker.datatype.boolean(),
         starred_at: faker.lorem.slug(),
       })),
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -26495,7 +26489,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/branches/:branch/rename': {
     post: {
-      201: {
+      '201': {
         name: faker.lorem.slug(),
         commit: {
           url: faker.internet.url(),
@@ -26835,19 +26829,19 @@ export const factories = {
         pattern: faker.lorem.slug(),
         required_approving_review_count: faker.datatype.number(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -26865,7 +26859,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/check-runs': {
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         head_sha: faker.lorem.slug(),
         node_id: faker.lorem.slug(),
@@ -27047,7 +27041,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/check-runs/:checkRunId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         head_sha: faker.lorem.slug(),
         node_id: faker.lorem.slug(),
@@ -27227,7 +27221,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         head_sha: faker.lorem.slug(),
         node_id: faker.lorem.slug(),
@@ -27409,7 +27403,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/check-runs/:checkRunId/annotations': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         path: faker.lorem.slug(),
@@ -27427,20 +27421,20 @@ export const factories = {
   },
   '/repos/:owner/:repo/check-runs/:checkRunId/rerequest': {
     post: {
-      201: {},
-      403: {
+      '201': {},
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -27450,7 +27444,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/check-suites': {
     post: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         head_branch: faker.lorem.slug(),
@@ -27963,7 +27957,7 @@ export const factories = {
         rerequestable: faker.datatype.boolean(),
         runs_rerequestable: faker.datatype.boolean(),
       },
-      201: {
+      '201': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         head_branch: faker.lorem.slug(),
@@ -28480,7 +28474,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/check-suites/preferences': {
     patch: {
-      200: {
+      '200': {
         preferences: {
           auto_trigger_checks: [
             ...new Array(
@@ -28890,7 +28884,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/check-suites/:checkSuiteId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         head_branch: faker.lorem.slug(),
@@ -29407,7 +29401,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/check-suites/:checkSuiteId/check-runs': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         check_runs: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -29595,11 +29589,11 @@ export const factories = {
     },
   },
   '/repos/:owner/:repo/check-suites/:checkSuiteId/rerequest': {
-    post: { 201: {} },
+    post: { '201': {} },
   },
   '/repos/:owner/:repo/code-scanning/alerts': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         number: faker.datatype.number(),
@@ -29696,19 +29690,19 @@ export const factories = {
           ),
         },
       })),
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      503: {
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -29717,7 +29711,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/code-scanning/alerts/:alertNumber': {
     get: {
-      200: {
+      '200': {
         number: faker.datatype.number(),
         created_at: faker.date.recent(),
         url: faker.internet.url(),
@@ -29825,26 +29819,26 @@ export const factories = {
           ),
         },
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      503: {
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
     },
     patch: {
-      200: {
+      '200': {
         number: faker.datatype.number(),
         created_at: faker.date.recent(),
         url: faker.internet.url(),
@@ -29952,19 +29946,19 @@ export const factories = {
           ),
         },
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      503: {
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -29973,7 +29967,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/code-scanning/alerts/:alertNumber/instances': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         ref: faker.lorem.slug(),
@@ -30004,19 +29998,19 @@ export const factories = {
           faker.random.arrayElement(['source', 'generated', 'test', 'library'])
         ),
       })),
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      503: {
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -30025,7 +30019,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/code-scanning/analyses': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         ref: faker.lorem.slug(),
@@ -30048,19 +30042,19 @@ export const factories = {
         deletable: faker.datatype.boolean(),
         warning: faker.lorem.slug(),
       })),
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      503: {
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -30069,7 +30063,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/code-scanning/analyses/:analysisId': {
     get: {
-      200: {
+      '200': {
         ref: faker.lorem.slug(),
         commit_sha: faker.lorem.slug(),
         analysis_key: faker.lorem.slug(),
@@ -30090,48 +30084,48 @@ export const factories = {
         deletable: faker.datatype.boolean(),
         warning: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      503: {
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
     },
     delete: {
-      200: {
+      '200': {
         next_analysis_url: faker.internet.url(),
         confirm_delete_url: faker.internet.url(),
       },
-      400: {
+      '400': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      503: {
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -30140,25 +30134,25 @@ export const factories = {
   },
   '/repos/:owner/:repo/code-scanning/sarifs': {
     post: {
-      202: {
+      '202': {
         id: faker.lorem.slug(),
         url: faker.internet.url(),
       },
-      400: null,
-      403: {
+      '400': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      413: null,
-      503: {
+      '413': null,
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -30167,18 +30161,18 @@ export const factories = {
   },
   '/repos/:owner/:repo/code-scanning/sarifs/:sarifId': {
     get: {
-      200: {
+      '200': {
         processing_status: faker.random.arrayElement(['pending', 'complete']),
         analyses_url: faker.internet.url(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: null,
-      503: {
+      '404': null,
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -30187,7 +30181,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/collaborators': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         login: faker.lorem.slug(),
@@ -30218,7 +30212,7 @@ export const factories = {
           admin: faker.datatype.boolean(),
         },
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -30227,9 +30221,9 @@ export const factories = {
     },
   },
   '/repos/:owner/:repo/collaborators/:username': {
-    get: { 204: null, 404: null },
+    get: { '204': null, '404': null },
     put: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         repository: {
           id: faker.datatype.number(),
@@ -30684,14 +30678,14 @@ export const factories = {
         html_url: faker.lorem.slug(),
         node_id: faker.lorem.slug(),
       },
-      204: null,
-      403: {
+      '204': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -30706,11 +30700,11 @@ export const factories = {
         })),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/repos/:owner/:repo/collaborators/:username/permission': {
     get: {
-      200: {
+      '200': {
         permission: faker.lorem.slug(),
         user: {
           login: faker.lorem.slug(),
@@ -30742,7 +30736,7 @@ export const factories = {
           },
         },
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -30752,7 +30746,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/comments': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         html_url: faker.internet.url(),
@@ -30816,7 +30810,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/comments/:commentId': {
     get: {
-      200: {
+      '200': {
         html_url: faker.internet.url(),
         url: faker.internet.url(),
         id: faker.datatype.number(),
@@ -30874,7 +30868,7 @@ export const factories = {
           rocket: faker.datatype.number(),
         },
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -30882,7 +30876,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         html_url: faker.internet.url(),
         url: faker.internet.url(),
         id: faker.datatype.number(),
@@ -30940,7 +30934,7 @@ export const factories = {
           rocket: faker.datatype.number(),
         },
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -30948,8 +30942,8 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      404: {
+      '204': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -30959,7 +30953,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/comments/:commentId/reactions': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -30999,7 +30993,7 @@ export const factories = {
         ]),
         created_at: faker.date.recent(),
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -31007,7 +31001,7 @@ export const factories = {
       },
     },
     post: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         user: {
@@ -31045,7 +31039,7 @@ export const factories = {
         ]),
         created_at: faker.date.recent(),
       },
-      201: {
+      '201': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         user: {
@@ -31083,11 +31077,11 @@ export const factories = {
         ]),
         created_at: faker.date.recent(),
       },
-      415: {
+      '415': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -31104,11 +31098,11 @@ export const factories = {
     },
   },
   '/repos/:owner/:repo/comments/:commentId/reactions/:reactionId': {
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/repos/:owner/:repo/commits': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.internet.url(),
@@ -31223,25 +31217,25 @@ export const factories = {
           previous_filename: faker.lorem.slug(),
         })),
       })),
-      400: {
+      '400': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      409: {
+      '409': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      500: {
+      '500': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -31251,7 +31245,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/commits/:commitSha/branches-where-head': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         name: faker.lorem.slug(),
@@ -31261,7 +31255,7 @@ export const factories = {
         },
         protected: faker.datatype.boolean(),
       })),
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -31279,7 +31273,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/commits/:commitSha/comments': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         html_url: faker.internet.url(),
@@ -31341,7 +31335,7 @@ export const factories = {
       })),
     },
     post: {
-      201: {
+      '201': {
         html_url: faker.internet.url(),
         url: faker.internet.url(),
         id: faker.datatype.number(),
@@ -31399,13 +31393,13 @@ export const factories = {
           rocket: faker.datatype.number(),
         },
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -31423,7 +31417,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/commits/:commitSha/pulls': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.internet.url(),
@@ -32292,7 +32286,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/commits/:ref': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         sha: faker.lorem.slug(),
         node_id: faker.lorem.slug(),
@@ -32405,13 +32399,13 @@ export const factories = {
           previous_filename: faker.lorem.slug(),
         })),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -32425,7 +32419,7 @@ export const factories = {
           value: null,
         })),
       },
-      500: {
+      '500': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -32435,7 +32429,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/commits/:ref/check-runs': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         check_runs: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -32624,7 +32618,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/commits/:ref/check-suites': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         check_suites: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -33148,7 +33142,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/commits/:ref/status': {
     get: {
-      200: {
+      '200': {
         state: faker.lorem.slug(),
         statuses: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -33564,7 +33558,7 @@ export const factories = {
         commit_url: faker.internet.url(),
         url: faker.internet.url(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -33574,7 +33568,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/commits/:ref/statuses': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.lorem.slug(),
@@ -33611,7 +33605,7 @@ export const factories = {
           starred_at: faker.lorem.slug(),
         },
       })),
-      301: {
+      '301': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -33621,7 +33615,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/compare/:basehead': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         html_url: faker.internet.url(),
         permalink_url: faker.internet.url(),
@@ -34013,13 +34007,13 @@ export const factories = {
           previous_filename: faker.lorem.slug(),
         })),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      500: {
+      '500': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -34029,36 +34023,36 @@ export const factories = {
   },
   '/repos/:owner/:repo/content_references/:contentReferenceId/attachments': {
     post: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         title: faker.lorem.slug(),
         body: faker.lorem.slug(),
         node_id: faker.lorem.slug(),
       },
-      304: null,
-      403: {
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      415: {
+      '415': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -34076,15 +34070,15 @@ export const factories = {
   },
   '/repos/:owner/:repo/contents/:path': {
     get: {
-      200: null,
-      302: null,
-      403: {
+      '200': null,
+      '302': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -34092,7 +34086,7 @@ export const factories = {
       },
     },
     put: {
-      200: {
+      '200': {
         content: {
           name: faker.lorem.slug(),
           path: faker.lorem.slug(),
@@ -34146,7 +34140,7 @@ export const factories = {
           },
         },
       },
-      201: {
+      '201': {
         content: {
           name: faker.lorem.slug(),
           path: faker.lorem.slug(),
@@ -34200,19 +34194,19 @@ export const factories = {
           },
         },
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      409: {
+      '409': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -34228,7 +34222,7 @@ export const factories = {
       },
     },
     delete: {
-      200: {
+      '200': {
         content: {
           name: faker.lorem.slug(),
           path: faker.lorem.slug(),
@@ -34282,19 +34276,19 @@ export const factories = {
           },
         },
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      409: {
+      '409': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -34308,7 +34302,7 @@ export const factories = {
           value: null,
         })),
       },
-      503: {
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -34317,7 +34311,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/contributors': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         login: faker.lorem.slug(),
@@ -34342,14 +34336,14 @@ export const factories = {
         email: faker.lorem.slug(),
         name: faker.lorem.slug(),
       })),
-      204: null,
-      403: {
+      '204': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -34359,7 +34353,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/deployments': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.internet.url(),
@@ -34455,7 +34449,7 @@ export const factories = {
       })),
     },
     post: {
-      201: {
+      '201': {
         url: faker.internet.url(),
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
@@ -34547,11 +34541,11 @@ export const factories = {
           pem: faker.lorem.slug(),
         },
       },
-      202: {
+      '202': {
         message: faker.lorem.slug(),
       },
-      409: null,
-      422: {
+      '409': null,
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -34569,7 +34563,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/deployments/:deploymentId': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
@@ -34661,7 +34655,7 @@ export const factories = {
           pem: faker.lorem.slug(),
         },
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -34669,14 +34663,14 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      404: {
+      '204': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -34687,7 +34681,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/deployments/:deploymentId/statuses': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.internet.url(),
@@ -34786,7 +34780,7 @@ export const factories = {
           pem: faker.lorem.slug(),
         },
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -34794,7 +34788,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         url: faker.internet.url(),
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
@@ -34891,7 +34885,7 @@ export const factories = {
           pem: faker.lorem.slug(),
         },
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -34909,7 +34903,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/deployments/:deploymentId/statuses/:statusId': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
@@ -35006,7 +35000,7 @@ export const factories = {
           pem: faker.lorem.slug(),
         },
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -35016,8 +35010,8 @@ export const factories = {
   },
   '/repos/:owner/:repo/dispatches': {
     post: {
-      204: null,
-      422: {
+      '204': null,
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -35035,7 +35029,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/environments': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         environments: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -35062,7 +35056,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/environments/:environmentName': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         name: faker.lorem.slug(),
@@ -35080,7 +35074,7 @@ export const factories = {
       },
     },
     put: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         name: faker.lorem.slug(),
@@ -35096,18 +35090,18 @@ export const factories = {
           custom_branch_policies: faker.datatype.boolean(),
         },
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/repos/:owner/:repo/events': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.lorem.slug(),
@@ -35773,7 +35767,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/forks': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -36167,7 +36161,7 @@ export const factories = {
         watchers: faker.datatype.number(),
         allow_forking: faker.datatype.boolean(),
       })),
-      400: {
+      '400': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -36175,7 +36169,7 @@ export const factories = {
       },
     },
     post: {
-      202: {
+      '202': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         name: faker.lorem.slug(),
@@ -37137,25 +37131,25 @@ export const factories = {
           },
         },
       },
-      400: {
+      '400': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -37173,29 +37167,29 @@ export const factories = {
   },
   '/repos/:owner/:repo/git/blobs': {
     post: {
-      201: {
+      '201': {
         url: faker.lorem.slug(),
         sha: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      409: {
+      '409': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -37213,7 +37207,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/git/blobs/:fileSha': {
     get: {
-      200: {
+      '200': {
         content: faker.lorem.slug(),
         encoding: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -37222,19 +37216,19 @@ export const factories = {
         node_id: faker.lorem.slug(),
         highlighted_content: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -37252,7 +37246,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/git/commits': {
     post: {
-      201: {
+      '201': {
         sha: faker.lorem.slug(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -37286,13 +37280,13 @@ export const factories = {
         },
         html_url: faker.internet.url(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -37310,7 +37304,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/git/commits/:commitSha': {
     get: {
-      200: {
+      '200': {
         sha: faker.lorem.slug(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -37344,7 +37338,7 @@ export const factories = {
         },
         html_url: faker.internet.url(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -37354,7 +37348,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/git/matching-refs/:ref': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         ref: faker.lorem.slug(),
@@ -37370,7 +37364,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/git/ref/:ref': {
     get: {
-      200: {
+      '200': {
         ref: faker.lorem.slug(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -37380,7 +37374,7 @@ export const factories = {
           url: faker.internet.url(),
         },
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -37390,7 +37384,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/git/refs': {
     post: {
-      201: {
+      '201': {
         ref: faker.lorem.slug(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -37400,7 +37394,7 @@ export const factories = {
           url: faker.internet.url(),
         },
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -37418,7 +37412,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/git/refs/:ref': {
     patch: {
-      200: {
+      '200': {
         ref: faker.lorem.slug(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -37428,7 +37422,7 @@ export const factories = {
           url: faker.internet.url(),
         },
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -37444,8 +37438,8 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      422: {
+      '204': null,
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -37463,7 +37457,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/git/tags': {
     post: {
-      201: {
+      '201': {
         node_id: faker.lorem.slug(),
         tag: faker.lorem.slug(),
         sha: faker.lorem.slug(),
@@ -37486,7 +37480,7 @@ export const factories = {
           signature: faker.lorem.slug(),
         },
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -37504,7 +37498,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/git/tags/:tagSha': {
     get: {
-      200: {
+      '200': {
         node_id: faker.lorem.slug(),
         tag: faker.lorem.slug(),
         sha: faker.lorem.slug(),
@@ -37527,7 +37521,7 @@ export const factories = {
           signature: faker.lorem.slug(),
         },
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -37537,7 +37531,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/git/trees': {
     post: {
-      201: {
+      '201': {
         sha: faker.lorem.slug(),
         url: faker.internet.url(),
         truncated: faker.datatype.boolean(),
@@ -37552,19 +37546,19 @@ export const factories = {
           url: faker.lorem.slug(),
         })),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -37582,7 +37576,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/git/trees/:treeSha': {
     get: {
-      200: {
+      '200': {
         sha: faker.lorem.slug(),
         url: faker.internet.url(),
         truncated: faker.datatype.boolean(),
@@ -37597,13 +37591,13 @@ export const factories = {
           url: faker.lorem.slug(),
         })),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -37621,7 +37615,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/hooks': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         type: faker.lorem.slug(),
@@ -37655,7 +37649,7 @@ export const factories = {
           message: faker.lorem.slug(),
         },
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -37663,7 +37657,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         type: faker.lorem.slug(),
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
@@ -37695,19 +37689,19 @@ export const factories = {
           message: faker.lorem.slug(),
         },
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -37725,7 +37719,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/hooks/:hookId': {
     get: {
-      200: {
+      '200': {
         type: faker.lorem.slug(),
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
@@ -37757,7 +37751,7 @@ export const factories = {
           message: faker.lorem.slug(),
         },
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -37765,7 +37759,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         type: faker.lorem.slug(),
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
@@ -37797,13 +37791,13 @@ export const factories = {
           message: faker.lorem.slug(),
         },
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -37819,8 +37813,8 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      404: {
+      '204': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -37830,7 +37824,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/hooks/:hookId/config': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         content_type: faker.lorem.slug(),
         secret: faker.lorem.slug(),
@@ -37838,7 +37832,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         content_type: faker.lorem.slug(),
         secret: faker.lorem.slug(),
@@ -37848,7 +37842,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/hooks/:hookId/deliveries': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -37863,13 +37857,13 @@ export const factories = {
         installation_id: faker.datatype.number(),
         repository_id: faker.datatype.number(),
       })),
-      400: {
+      '400': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -37887,7 +37881,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/hooks/:hookId/deliveries/:deliveryId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         guid: faker.lorem.slug(),
         delivered_at: faker.date.recent(),
@@ -37909,13 +37903,13 @@ export const factories = {
           payload: faker.lorem.slug(),
         },
       },
-      400: {
+      '400': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -37933,14 +37927,14 @@ export const factories = {
   },
   '/repos/:owner/:repo/hooks/:hookId/deliveries/:deliveryId/attempts': {
     post: {
-      202: {},
-      400: {
+      '202': {},
+      '400': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -37958,8 +37952,8 @@ export const factories = {
   },
   '/repos/:owner/:repo/hooks/:hookId/pings': {
     post: {
-      204: null,
-      404: {
+      '204': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -37969,8 +37963,8 @@ export const factories = {
   },
   '/repos/:owner/:repo/hooks/:hookId/tests': {
     post: {
-      204: null,
-      404: {
+      '204': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -37980,7 +37974,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/installation': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         account: null,
         repository_selection: faker.random.arrayElement(['all', 'selected']),
@@ -38077,13 +38071,13 @@ export const factories = {
         suspended_at: faker.date.recent(),
         contact_email: faker.lorem.slug(),
       },
-      301: {
+      '301': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -38093,7 +38087,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/invitations': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -38554,7 +38548,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/invitations/:invitationId': {
     patch: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         repository: {
           id: faker.datatype.number(),
@@ -39010,11 +39004,11 @@ export const factories = {
         node_id: faker.lorem.slug(),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/repos/:owner/:repo/issues': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -39522,19 +39516,19 @@ export const factories = {
           rocket: faker.datatype.number(),
         },
       })),
-      301: {
+      '301': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -39550,7 +39544,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -40056,25 +40050,25 @@ export const factories = {
           rocket: faker.datatype.number(),
         },
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -40088,7 +40082,7 @@ export const factories = {
           value: null,
         })),
       },
-      503: {
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -40097,7 +40091,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/issues/comments': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -40207,13 +40201,13 @@ export const factories = {
           rocket: faker.datatype.number(),
         },
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -40231,7 +40225,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/issues/comments/:commentId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -40339,7 +40333,7 @@ export const factories = {
           rocket: faker.datatype.number(),
         },
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -40347,7 +40341,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -40455,7 +40449,7 @@ export const factories = {
           rocket: faker.datatype.number(),
         },
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -40470,11 +40464,11 @@ export const factories = {
         })),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/repos/:owner/:repo/issues/comments/:commentId/reactions': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -40514,7 +40508,7 @@ export const factories = {
         ]),
         created_at: faker.date.recent(),
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -40522,7 +40516,7 @@ export const factories = {
       },
     },
     post: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         user: {
@@ -40560,7 +40554,7 @@ export const factories = {
         ]),
         created_at: faker.date.recent(),
       },
-      201: {
+      '201': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         user: {
@@ -40598,7 +40592,7 @@ export const factories = {
         ]),
         created_at: faker.date.recent(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -40615,11 +40609,11 @@ export const factories = {
     },
   },
   '/repos/:owner/:repo/issues/comments/:commentId/reactions/:reactionId': {
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/repos/:owner/:repo/issues/events': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -41376,7 +41370,7 @@ export const factories = {
           pem: faker.lorem.slug(),
         },
       })),
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -41394,7 +41388,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/issues/events/:eventId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -42149,19 +42143,19 @@ export const factories = {
           pem: faker.lorem.slug(),
         },
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -42171,7 +42165,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/issues/:issueNumber': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -42677,20 +42671,20 @@ export const factories = {
           rocket: faker.datatype.number(),
         },
       },
-      301: {
+      '301': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      304: null,
-      404: {
+      '304': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -42698,7 +42692,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -43204,31 +43198,31 @@ export const factories = {
           rocket: faker.datatype.number(),
         },
       },
-      301: {
+      '301': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -43242,7 +43236,7 @@ export const factories = {
           value: null,
         })),
       },
-      503: {
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -43251,7 +43245,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/issues/:issueNumber/assignees': {
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -43759,7 +43753,7 @@ export const factories = {
       },
     },
     delete: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -44269,7 +44263,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/issues/:issueNumber/comments': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -44379,13 +44373,13 @@ export const factories = {
           rocket: faker.datatype.number(),
         },
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -44393,7 +44387,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -44501,25 +44495,25 @@ export const factories = {
           rocket: faker.datatype.number(),
         },
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -44537,10 +44531,10 @@ export const factories = {
   },
   '/repos/:owner/:repo/issues/:issueNumber/events': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => null),
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -44550,7 +44544,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/issues/:issueNumber/labels': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -44561,7 +44555,7 @@ export const factories = {
         color: faker.lorem.slug(),
         default: faker.datatype.boolean(),
       })),
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -44569,7 +44563,7 @@ export const factories = {
       },
     },
     post: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -44580,13 +44574,13 @@ export const factories = {
         color: faker.lorem.slug(),
         default: faker.datatype.boolean(),
       })),
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -44602,7 +44596,7 @@ export const factories = {
       },
     },
     put: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -44613,13 +44607,13 @@ export const factories = {
         color: faker.lorem.slug(),
         default: faker.datatype.boolean(),
       })),
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -44635,8 +44629,8 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      410: {
+      '204': null,
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -44646,7 +44640,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/issues/:issueNumber/labels/:name': {
     delete: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -44657,13 +44651,13 @@ export const factories = {
         color: faker.lorem.slug(),
         default: faker.datatype.boolean(),
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -44673,26 +44667,26 @@ export const factories = {
   },
   '/repos/:owner/:repo/issues/:issueNumber/lock': {
     put: {
-      204: null,
-      403: {
+      '204': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -44708,14 +44702,14 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      403: {
+      '204': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -44725,7 +44719,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/issues/:issueNumber/reactions': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -44765,13 +44759,13 @@ export const factories = {
         ]),
         created_at: faker.date.recent(),
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -44779,7 +44773,7 @@ export const factories = {
       },
     },
     post: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         user: {
@@ -44817,7 +44811,7 @@ export const factories = {
         ]),
         created_at: faker.date.recent(),
       },
-      201: {
+      '201': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         user: {
@@ -44855,7 +44849,7 @@ export const factories = {
         ]),
         created_at: faker.date.recent(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -44872,20 +44866,20 @@ export const factories = {
     },
   },
   '/repos/:owner/:repo/issues/:issueNumber/reactions/:reactionId': {
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/repos/:owner/:repo/issues/:issueNumber/timeline': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({})),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -44895,7 +44889,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/keys': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -44908,7 +44902,7 @@ export const factories = {
       })),
     },
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         key: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -44917,7 +44911,7 @@ export const factories = {
         created_at: faker.lorem.slug(),
         read_only: faker.datatype.boolean(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -44935,7 +44929,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/keys/:keyId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         key: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -44944,18 +44938,18 @@ export const factories = {
         created_at: faker.lorem.slug(),
         read_only: faker.datatype.boolean(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/repos/:owner/:repo/labels': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -44966,7 +44960,7 @@ export const factories = {
         color: faker.lorem.slug(),
         default: faker.datatype.boolean(),
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -44974,7 +44968,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -44983,13 +44977,13 @@ export const factories = {
         color: faker.lorem.slug(),
         default: faker.datatype.boolean(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -45007,7 +45001,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/labels/:name': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -45016,7 +45010,7 @@ export const factories = {
         color: faker.lorem.slug(),
         default: faker.datatype.boolean(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -45024,7 +45018,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -45034,22 +45028,22 @@ export const factories = {
         default: faker.datatype.boolean(),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/repos/:owner/:repo/languages': {
     get: {
-      200: [...new Array(5).keys()]
+      '200': [...new Array(5).keys()]
         .map(_ => ({ [faker.lorem.word()]: faker.datatype.number() }))
         .reduce((acc, next) => Object.assign(acc, next), {}),
     },
   },
   '/repos/:owner/:repo/lfs': {
-    put: { 202: {}, 403: null },
-    delete: { 204: null },
+    put: { '202': {}, '403': null },
+    delete: { '204': null },
   },
   '/repos/:owner/:repo/license': {
     get: {
-      200: {
+      '200': {
         name: faker.lorem.slug(),
         path: faker.lorem.slug(),
         sha: faker.lorem.slug(),
@@ -45079,7 +45073,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/merge-upstream': {
     post: {
-      200: {
+      '200': {
         message: faker.lorem.slug(),
         merge_type: faker.random.arrayElement([
           'merge',
@@ -45088,13 +45082,13 @@ export const factories = {
         ]),
         base_branch: faker.lorem.slug(),
       },
-      409: null,
-      422: null,
+      '409': null,
+      '422': null,
     },
   },
   '/repos/:owner/:repo/merges': {
     post: {
-      201: {
+      '201': {
         url: faker.internet.url(),
         sha: faker.lorem.slug(),
         node_id: faker.lorem.slug(),
@@ -45207,16 +45201,16 @@ export const factories = {
           previous_filename: faker.lorem.slug(),
         })),
       },
-      204: null,
-      403: {
+      '204': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: null,
-      409: null,
-      422: {
+      '404': null,
+      '409': null,
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -45234,7 +45228,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/milestones': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.internet.url(),
@@ -45276,7 +45270,7 @@ export const factories = {
         closed_at: faker.date.recent(),
         due_on: faker.date.recent(),
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -45284,7 +45278,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         url: faker.internet.url(),
         html_url: faker.internet.url(),
         labels_url: faker.internet.url(),
@@ -45324,13 +45318,13 @@ export const factories = {
         closed_at: faker.date.recent(),
         due_on: faker.date.recent(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -45348,7 +45342,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/milestones/:milestoneNumber': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         html_url: faker.internet.url(),
         labels_url: faker.internet.url(),
@@ -45388,7 +45382,7 @@ export const factories = {
         closed_at: faker.date.recent(),
         due_on: faker.date.recent(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -45396,7 +45390,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         html_url: faker.internet.url(),
         labels_url: faker.internet.url(),
@@ -45438,8 +45432,8 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      404: {
+      '204': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -45449,7 +45443,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/milestones/:milestoneNumber/labels': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -45464,7 +45458,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/notifications': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.lorem.slug(),
@@ -45877,16 +45871,16 @@ export const factories = {
       })),
     },
     put: {
-      202: {
+      '202': {
         message: faker.lorem.slug(),
         url: faker.lorem.slug(),
       },
-      205: null,
+      '205': null,
     },
   },
   '/repos/:owner/:repo/pages': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         status: faker.random.arrayElement(['built', 'building', 'errored']),
         cname: faker.lorem.slug(),
@@ -45924,11 +45918,11 @@ export const factories = {
               faker.datatype.number({ max: MAX_ARRAY_LENGTH })
             ).keys(),
           ].map(_ => faker.lorem.slug()),
-          expires_at: faker.date.recent().slice(0, 10),
+          expires_at: faker.date.recent().toISOString().slice(0, 10),
         },
         https_enforced: faker.datatype.boolean(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -45936,7 +45930,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         url: faker.internet.url(),
         status: faker.random.arrayElement(['built', 'building', 'errored']),
         cname: faker.lorem.slug(),
@@ -45974,17 +45968,17 @@ export const factories = {
               faker.datatype.number({ max: MAX_ARRAY_LENGTH })
             ).keys(),
           ].map(_ => faker.lorem.slug()),
-          expires_at: faker.date.recent().slice(0, 10),
+          expires_at: faker.date.recent().toISOString().slice(0, 10),
         },
         https_enforced: faker.datatype.boolean(),
       },
-      409: {
+      '409': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -46000,14 +45994,14 @@ export const factories = {
       },
     },
     put: {
-      204: null,
-      400: {
+      '204': null,
+      '400': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -46023,14 +46017,14 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      404: {
+      '204': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -46048,7 +46042,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/pages/builds': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.internet.url(),
@@ -46086,7 +46080,7 @@ export const factories = {
       })),
     },
     post: {
-      201: {
+      '201': {
         url: faker.internet.url(),
         status: faker.lorem.slug(),
       },
@@ -46094,7 +46088,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/pages/builds/latest': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         status: faker.lorem.slug(),
         error: {
@@ -46132,7 +46126,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/pages/builds/:buildId': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         status: faker.lorem.slug(),
         error: {
@@ -46170,7 +46164,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/pre-receive-hooks': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -46182,7 +46176,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/pre-receive-hooks/:preReceiveHookId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         enforcement: faker.lorem.slug(),
@@ -46190,7 +46184,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         enforcement: faker.lorem.slug(),
@@ -46198,7 +46192,7 @@ export const factories = {
       },
     },
     delete: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         name: faker.lorem.slug(),
         enforcement: faker.lorem.slug(),
@@ -46208,7 +46202,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/projects': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         owner_url: faker.internet.url(),
@@ -46254,31 +46248,31 @@ export const factories = {
         ]),
         private: faker.datatype.boolean(),
       })),
-      401: {
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -46287,7 +46281,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         owner_url: faker.internet.url(),
         url: faker.internet.url(),
         html_url: faker.internet.url(),
@@ -46331,31 +46325,31 @@ export const factories = {
         ]),
         private: faker.datatype.boolean(),
       },
-      401: {
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      410: {
+      '410': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -46366,7 +46360,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/pulls': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.internet.url(),
@@ -47231,8 +47225,8 @@ export const factories = {
         },
         draft: faker.datatype.boolean(),
       })),
-      304: null,
-      422: {
+      '304': null,
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -47248,7 +47242,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         url: faker.internet.url(),
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
@@ -47830,13 +47824,13 @@ export const factories = {
         deletions: faker.datatype.number(),
         changed_files: faker.datatype.number(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -47854,7 +47848,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/pulls/comments': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.lorem.slug(),
@@ -47942,7 +47936,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/pulls/comments/:commentId': {
     get: {
-      200: {
+      '200': {
         url: faker.lorem.slug(),
         pull_request_review_id: faker.datatype.number(),
         id: faker.datatype.number(),
@@ -48024,7 +48018,7 @@ export const factories = {
         body_html: faker.lorem.slug(),
         body_text: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -48032,7 +48026,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         url: faker.lorem.slug(),
         pull_request_review_id: faker.datatype.number(),
         id: faker.datatype.number(),
@@ -48116,8 +48110,8 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      404: {
+      '204': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -48127,7 +48121,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/pulls/comments/:commentId/reactions': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -48167,7 +48161,7 @@ export const factories = {
         ]),
         created_at: faker.date.recent(),
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -48175,7 +48169,7 @@ export const factories = {
       },
     },
     post: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         user: {
@@ -48213,7 +48207,7 @@ export const factories = {
         ]),
         created_at: faker.date.recent(),
       },
-      201: {
+      '201': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         user: {
@@ -48251,7 +48245,7 @@ export const factories = {
         ]),
         created_at: faker.date.recent(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -48268,11 +48262,11 @@ export const factories = {
     },
   },
   '/repos/:owner/:repo/pulls/comments/:commentId/reactions/:reactionId': {
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/repos/:owner/:repo/pulls/:pullNumber': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
@@ -48854,14 +48848,14 @@ export const factories = {
         deletions: faker.datatype.number(),
         changed_files: faker.datatype.number(),
       },
-      304: null,
-      404: {
+      '304': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      500: {
+      '500': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -48869,7 +48863,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
@@ -49451,13 +49445,13 @@ export const factories = {
         deletions: faker.datatype.number(),
         changed_files: faker.datatype.number(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -49475,7 +49469,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/pulls/:pullNumber/comments': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.lorem.slug(),
@@ -49561,7 +49555,7 @@ export const factories = {
       })),
     },
     post: {
-      201: {
+      '201': {
         url: faker.lorem.slug(),
         pull_request_review_id: faker.datatype.number(),
         id: faker.datatype.number(),
@@ -49643,13 +49637,13 @@ export const factories = {
         body_html: faker.lorem.slug(),
         body_text: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -49667,7 +49661,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/pulls/:pullNumber/comments/:commentId/replies': {
     post: {
-      201: {
+      '201': {
         url: faker.lorem.slug(),
         pull_request_review_id: faker.datatype.number(),
         id: faker.datatype.number(),
@@ -49749,7 +49743,7 @@ export const factories = {
         body_html: faker.lorem.slug(),
         body_text: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -49759,7 +49753,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/pulls/:pullNumber/commits': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.internet.url(),
@@ -49878,7 +49872,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/pulls/:pullNumber/files': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         sha: faker.lorem.slug(),
@@ -49901,7 +49895,7 @@ export const factories = {
         patch: faker.lorem.slug(),
         previous_filename: faker.lorem.slug(),
       })),
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -49915,7 +49909,7 @@ export const factories = {
           value: null,
         })),
       },
-      500: {
+      '500': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -49924,34 +49918,34 @@ export const factories = {
     },
   },
   '/repos/:owner/:repo/pulls/:pullNumber/merge': {
-    get: { 204: null, 404: null },
+    get: { '204': null, '404': null },
     put: {
-      200: {
+      '200': {
         sha: faker.lorem.slug(),
         merged: faker.datatype.boolean(),
         message: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      405: {
+      '405': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
-      409: {
+      '409': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -49969,7 +49963,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/pulls/:pullNumber/requested_reviewers': {
     get: {
-      200: {
+      '200': {
         users: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => ({
@@ -50034,7 +50028,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         url: faker.internet.url(),
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
@@ -50897,16 +50891,16 @@ export const factories = {
         },
         draft: faker.datatype.boolean(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: null,
+      '422': null,
     },
     delete: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
@@ -51769,7 +51763,7 @@ export const factories = {
         },
         draft: faker.datatype.boolean(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -51787,7 +51781,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/pulls/:pullNumber/reviews': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -51844,7 +51838,7 @@ export const factories = {
       })),
     },
     post: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         user: {
@@ -51897,13 +51891,13 @@ export const factories = {
           'OWNER',
         ]),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -51914,7 +51908,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/pulls/:pullNumber/reviews/:reviewId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         user: {
@@ -51967,7 +51961,7 @@ export const factories = {
           'OWNER',
         ]),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -51975,7 +51969,7 @@ export const factories = {
       },
     },
     put: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         user: {
@@ -52028,7 +52022,7 @@ export const factories = {
           'OWNER',
         ]),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -52037,7 +52031,7 @@ export const factories = {
       },
     },
     delete: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         user: {
@@ -52090,13 +52084,13 @@ export const factories = {
           'OWNER',
         ]),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -52107,7 +52101,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/pulls/:pullNumber/reviews/:reviewId/comments': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.internet.url(),
@@ -52191,7 +52185,7 @@ export const factories = {
         start_line: faker.datatype.number(),
         original_start_line: faker.datatype.number(),
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -52201,7 +52195,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/pulls/:pullNumber/reviews/:reviewId/dismissals': {
     put: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         user: {
@@ -52254,13 +52248,13 @@ export const factories = {
           'OWNER',
         ]),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -52271,7 +52265,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/pulls/:pullNumber/reviews/:reviewId/events': {
     post: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         user: {
@@ -52324,19 +52318,19 @@ export const factories = {
           'OWNER',
         ]),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -52347,17 +52341,17 @@ export const factories = {
   },
   '/repos/:owner/:repo/pulls/:pullNumber/update-branch': {
     put: {
-      202: {
+      '202': {
         message: faker.lorem.slug(),
         url: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -52375,7 +52369,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/readme': {
     get: {
-      200: {
+      '200': {
         type: faker.lorem.slug(),
         encoding: faker.lorem.slug(),
         size: faker.datatype.number(),
@@ -52395,13 +52389,13 @@ export const factories = {
         target: faker.lorem.slug(),
         submodule_git_url: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -52419,7 +52413,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/readme/:dir': {
     get: {
-      200: {
+      '200': {
         type: faker.lorem.slug(),
         encoding: faker.lorem.slug(),
         size: faker.datatype.number(),
@@ -52439,13 +52433,13 @@ export const factories = {
         target: faker.lorem.slug(),
         submodule_git_url: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -52463,7 +52457,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/releases': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.internet.url(),
@@ -52560,7 +52554,7 @@ export const factories = {
           rocket: faker.datatype.number(),
         },
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -52568,7 +52562,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         url: faker.internet.url(),
         html_url: faker.internet.url(),
         assets_url: faker.internet.url(),
@@ -52663,7 +52657,7 @@ export const factories = {
           rocket: faker.datatype.number(),
         },
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -52681,7 +52675,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/releases/assets/:assetId': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         browser_download_url: faker.internet.url(),
         id: faker.datatype.number(),
@@ -52718,20 +52712,20 @@ export const factories = {
           starred_at: faker.lorem.slug(),
         },
       },
-      302: null,
-      404: {
+      '302': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      415: {
+      '415': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
     },
     patch: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         browser_download_url: faker.internet.url(),
         id: faker.datatype.number(),
@@ -52769,15 +52763,15 @@ export const factories = {
         },
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/repos/:owner/:repo/releases/generate-notes': {
     post: {
-      200: {
+      '200': {
         name: faker.lorem.slug(),
         body: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -52787,7 +52781,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/releases/latest': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         html_url: faker.internet.url(),
         assets_url: faker.internet.url(),
@@ -52886,7 +52880,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/releases/tags/:tag': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         html_url: faker.internet.url(),
         assets_url: faker.internet.url(),
@@ -52981,7 +52975,7 @@ export const factories = {
           rocket: faker.datatype.number(),
         },
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -52991,7 +52985,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/releases/:releaseId': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         html_url: faker.internet.url(),
         assets_url: faker.internet.url(),
@@ -53086,7 +53080,7 @@ export const factories = {
           rocket: faker.datatype.number(),
         },
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -53094,7 +53088,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         html_url: faker.internet.url(),
         assets_url: faker.internet.url(),
@@ -53190,11 +53184,11 @@ export const factories = {
         },
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/repos/:owner/:repo/releases/:releaseId/assets': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.internet.url(),
@@ -53235,7 +53229,7 @@ export const factories = {
       })),
     },
     post: {
-      201: {
+      '201': {
         url: faker.internet.url(),
         browser_download_url: faker.internet.url(),
         id: faker.datatype.number(),
@@ -53272,12 +53266,12 @@ export const factories = {
           starred_at: faker.lorem.slug(),
         },
       },
-      422: null,
+      '422': null,
     },
   },
   '/repos/:owner/:repo/releases/:releaseId/reactions': {
     post: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         user: {
@@ -53315,7 +53309,7 @@ export const factories = {
         ]),
         created_at: faker.date.recent(),
       },
-      201: {
+      '201': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         user: {
@@ -53353,7 +53347,7 @@ export const factories = {
         ]),
         created_at: faker.date.recent(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -53371,7 +53365,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/secret-scanning/alerts': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         number: faker.datatype.number(),
@@ -53414,8 +53408,8 @@ export const factories = {
         secret_type: faker.lorem.slug(),
         secret: faker.lorem.slug(),
       })),
-      404: null,
-      503: {
+      '404': null,
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -53424,7 +53418,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/secret-scanning/alerts/:alertNumber': {
     get: {
-      200: {
+      '200': {
         number: faker.datatype.number(),
         created_at: faker.date.recent(),
         url: faker.internet.url(),
@@ -53465,16 +53459,16 @@ export const factories = {
         secret_type: faker.lorem.slug(),
         secret: faker.lorem.slug(),
       },
-      304: null,
-      404: null,
-      503: {
+      '304': null,
+      '404': null,
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
     },
     patch: {
-      200: {
+      '200': {
         number: faker.datatype.number(),
         created_at: faker.date.recent(),
         url: faker.internet.url(),
@@ -53515,9 +53509,9 @@ export const factories = {
         secret_type: faker.lorem.slug(),
         secret: faker.lorem.slug(),
       },
-      404: null,
-      422: null,
-      503: {
+      '404': null,
+      '422': null,
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -53526,14 +53520,14 @@ export const factories = {
   },
   '/repos/:owner/:repo/secret-scanning/alerts/:alertNumber/locations': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         type: faker.random.arrayElement(['commit']),
         details: null,
       })),
-      404: null,
-      503: {
+      '404': null,
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -53542,8 +53536,8 @@ export const factories = {
   },
   '/repos/:owner/:repo/stargazers': {
     get: {
-      200: null,
-      422: {
+      '200': null,
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -53561,20 +53555,20 @@ export const factories = {
   },
   '/repos/:owner/:repo/stats/code_frequency': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ =>
         [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => faker.datatype.number())
       ),
-      202: {},
-      204: null,
+      '202': {},
+      '204': null,
     },
   },
   '/repos/:owner/:repo/stats/commit_activity': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         days: [
@@ -53583,13 +53577,13 @@ export const factories = {
         total: faker.datatype.number(),
         week: faker.datatype.number(),
       })),
-      202: {},
-      204: null,
+      '202': {},
+      '204': null,
     },
   },
   '/repos/:owner/:repo/stats/contributors': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         author: {
@@ -53625,13 +53619,13 @@ export const factories = {
           c: faker.datatype.number(),
         })),
       })),
-      202: {},
-      204: null,
+      '202': {},
+      '204': null,
     },
   },
   '/repos/:owner/:repo/stats/participation': {
     get: {
-      200: {
+      '200': {
         all: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => faker.datatype.number()),
@@ -53639,7 +53633,7 @@ export const factories = {
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => faker.datatype.number()),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -53649,19 +53643,19 @@ export const factories = {
   },
   '/repos/:owner/:repo/stats/punch_card': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ =>
         [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => faker.datatype.number())
       ),
-      204: null,
+      '204': null,
     },
   },
   '/repos/:owner/:repo/statuses/:sha': {
     post: {
-      201: {
+      '201': {
         url: faker.lorem.slug(),
         avatar_url: faker.lorem.slug(),
         id: faker.datatype.number(),
@@ -53700,7 +53694,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/subscribers': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         name: faker.lorem.slug(),
@@ -53729,7 +53723,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/subscription': {
     get: {
-      200: {
+      '200': {
         subscribed: faker.datatype.boolean(),
         ignored: faker.datatype.boolean(),
         reason: faker.lorem.slug(),
@@ -53737,16 +53731,16 @@ export const factories = {
         url: faker.internet.url(),
         repository_url: faker.internet.url(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: null,
+      '404': null,
     },
     put: {
-      200: {
+      '200': {
         subscribed: faker.datatype.boolean(),
         ignored: faker.datatype.boolean(),
         reason: faker.lorem.slug(),
@@ -53755,11 +53749,11 @@ export const factories = {
         repository_url: faker.internet.url(),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/repos/:owner/:repo/tags': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         name: faker.lorem.slug(),
@@ -53773,10 +53767,10 @@ export const factories = {
       })),
     },
   },
-  '/repos/:owner/:repo/tarball/:ref': { get: { 302: null } },
+  '/repos/:owner/:repo/tarball/:ref': { get: { '302': null } },
   '/repos/:owner/:repo/teams': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -53816,12 +53810,12 @@ export const factories = {
   },
   '/repos/:owner/:repo/topics': {
     get: {
-      200: {
+      '200': {
         names: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => faker.lorem.slug()),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -53829,18 +53823,18 @@ export const factories = {
       },
     },
     put: {
-      200: {
+      '200': {
         names: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => faker.lorem.slug()),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -53851,7 +53845,7 @@ export const factories = {
   },
   '/repos/:owner/:repo/transfer': {
     post: {
-      202: {
+      '202': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         name: faker.lorem.slug(),
@@ -54245,10 +54239,10 @@ export const factories = {
       },
     },
   },
-  '/repos/:owner/:repo/zipball/:ref': { get: { 302: null } },
+  '/repos/:owner/:repo/zipball/:ref': { get: { '302': null } },
   '/repos/:templateOwner/:templateRepo/generate': {
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         name: faker.lorem.slug(),
@@ -54515,7 +54509,7 @@ export const factories = {
   },
   '/repositories': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -54909,8 +54903,8 @@ export const factories = {
         watchers: faker.datatype.number(),
         allow_forking: faker.datatype.boolean(),
       })),
-      304: null,
-      422: {
+      '304': null,
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -54928,7 +54922,7 @@ export const factories = {
   },
   '/repositories/:repositoryId/environments/:environmentName/secrets': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         secrets: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -54943,7 +54937,7 @@ export const factories = {
   '/repositories/:repositoryId/environments/:environmentName/secrets/public-key':
     {
       get: {
-        200: {
+        '200': {
           key_id: faker.lorem.slug(),
           key: faker.lorem.slug(),
           id: faker.datatype.number(),
@@ -54956,18 +54950,18 @@ export const factories = {
   '/repositories/:repositoryId/environments/:environmentName/secrets/:secretName':
     {
       get: {
-        200: {
+        '200': {
           name: faker.lorem.slug(),
           created_at: faker.date.recent(),
           updated_at: faker.date.recent(),
         },
       },
-      put: { 201: {}, 204: null },
-      delete: { 204: null },
+      put: { '201': {}, '204': null },
+      delete: { '204': null },
     },
   '/search/code': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         incomplete_results: faker.datatype.boolean(),
         items: [
@@ -55406,14 +55400,14 @@ export const factories = {
           })),
         })),
       },
-      304: null,
-      403: {
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -55427,7 +55421,7 @@ export const factories = {
           value: null,
         })),
       },
-      503: {
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -55436,7 +55430,7 @@ export const factories = {
   },
   '/search/commits': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         incomplete_results: faker.datatype.boolean(),
         items: [
@@ -55928,12 +55922,12 @@ export const factories = {
           })),
         })),
       },
-      304: null,
+      '304': null,
     },
   },
   '/search/issues': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         incomplete_results: faker.datatype.boolean(),
         items: [
@@ -56457,14 +56451,14 @@ export const factories = {
           },
         })),
       },
-      304: null,
-      403: {
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -56478,7 +56472,7 @@ export const factories = {
           value: null,
         })),
       },
-      503: {
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -56487,7 +56481,7 @@ export const factories = {
   },
   '/search/labels': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         incomplete_results: faker.datatype.boolean(),
         items: [
@@ -56525,20 +56519,20 @@ export const factories = {
           })),
         })),
       },
-      304: null,
-      403: {
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -56556,7 +56550,7 @@ export const factories = {
   },
   '/search/repositories': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         incomplete_results: faker.datatype.boolean(),
         items: [
@@ -56711,8 +56705,8 @@ export const factories = {
           is_template: faker.datatype.boolean(),
         })),
       },
-      304: null,
-      422: {
+      '304': null,
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -56726,7 +56720,7 @@ export const factories = {
           value: null,
         })),
       },
-      503: {
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -56735,7 +56729,7 @@ export const factories = {
   },
   '/search/topics': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         incomplete_results: faker.datatype.boolean(),
         items: [
@@ -56802,12 +56796,12 @@ export const factories = {
           })),
         })),
       },
-      304: null,
+      '304': null,
     },
   },
   '/search/users': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         incomplete_results: faker.datatype.boolean(),
         items: [
@@ -56870,8 +56864,8 @@ export const factories = {
           suspended_at: faker.date.recent(),
         })),
       },
-      304: null,
-      422: {
+      '304': null,
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -56885,7 +56879,7 @@ export const factories = {
           value: null,
         })),
       },
-      503: {
+      '503': {
         code: faker.lorem.slug(),
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
@@ -56894,7 +56888,7 @@ export const factories = {
   },
   '/setup/api/configcheck': {
     get: {
-      200: {
+      '200': {
         status: faker.lorem.slug(),
         progress: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -56905,10 +56899,10 @@ export const factories = {
       },
     },
   },
-  '/setup/api/configure': { post: { 202: null } },
+  '/setup/api/configure': { post: { '202': null } },
   '/setup/api/maintenance': {
     get: {
-      200: {
+      '200': {
         status: faker.lorem.slug(),
         scheduled_time: faker.lorem.slug(),
         connection_services: [
@@ -56920,7 +56914,7 @@ export const factories = {
       },
     },
     post: {
-      200: {
+      '200': {
         status: faker.lorem.slug(),
         scheduled_time: faker.lorem.slug(),
         connection_services: [
@@ -56934,7 +56928,7 @@ export const factories = {
   },
   '/setup/api/settings': {
     get: {
-      200: {
+      '200': {
         enterprise: {
           private_mode: faker.datatype.boolean(),
           public_pages: faker.datatype.boolean(),
@@ -57083,11 +57077,11 @@ export const factories = {
         ].map(_ => faker.lorem.slug()),
       },
     },
-    put: { 204: null },
+    put: { '204': null },
   },
   '/setup/api/settings/authorized-keys': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         key: faker.lorem.slug(),
@@ -57095,7 +57089,7 @@ export const factories = {
       })),
     },
     post: {
-      201: [
+      '201': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         key: faker.lorem.slug(),
@@ -57103,7 +57097,7 @@ export const factories = {
       })),
     },
     delete: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         key: faker.lorem.slug(),
@@ -57111,11 +57105,11 @@ export const factories = {
       })),
     },
   },
-  '/setup/api/start': { post: { 202: null } },
-  '/setup/api/upgrade': { post: { 202: null } },
+  '/setup/api/start': { post: { '202': null } },
+  '/setup/api/upgrade': { post: { '202': null } },
   '/teams/:teamId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -57202,7 +57196,7 @@ export const factories = {
         },
         ldap_dn: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -57210,7 +57204,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -57297,7 +57291,7 @@ export const factories = {
         },
         ldap_dn: faker.lorem.slug(),
       },
-      201: {
+      '201': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         url: faker.internet.url(),
@@ -57384,19 +57378,19 @@ export const factories = {
         },
         ldap_dn: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -57412,14 +57406,14 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      404: {
+      '204': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -57437,7 +57431,7 @@ export const factories = {
   },
   '/teams/:teamId/discussions': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         author: {
@@ -57494,7 +57488,7 @@ export const factories = {
       })),
     },
     post: {
-      201: {
+      '201': {
         author: {
           name: faker.lorem.slug(),
           email: faker.lorem.slug(),
@@ -57551,7 +57545,7 @@ export const factories = {
   },
   '/teams/:teamId/discussions/:discussionNumber': {
     get: {
-      200: {
+      '200': {
         author: {
           name: faker.lorem.slug(),
           email: faker.lorem.slug(),
@@ -57606,7 +57600,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         author: {
           name: faker.lorem.slug(),
           email: faker.lorem.slug(),
@@ -57660,11 +57654,11 @@ export const factories = {
         },
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/teams/:teamId/discussions/:discussionNumber/comments': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         author: {
@@ -57716,7 +57710,7 @@ export const factories = {
       })),
     },
     post: {
-      201: {
+      '201': {
         author: {
           name: faker.lorem.slug(),
           email: faker.lorem.slug(),
@@ -57768,7 +57762,7 @@ export const factories = {
   },
   '/teams/:teamId/discussions/:discussionNumber/comments/:commentNumber': {
     get: {
-      200: {
+      '200': {
         author: {
           name: faker.lorem.slug(),
           email: faker.lorem.slug(),
@@ -57818,7 +57812,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         author: {
           name: faker.lorem.slug(),
           email: faker.lorem.slug(),
@@ -57867,12 +57861,12 @@ export const factories = {
         },
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/teams/:teamId/discussions/:discussionNumber/comments/:commentNumber/reactions':
     {
       get: {
-        200: [
+        '200': [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => ({
           id: faker.datatype.number(),
@@ -57914,7 +57908,7 @@ export const factories = {
         })),
       },
       post: {
-        201: {
+        '201': {
           id: faker.datatype.number(),
           node_id: faker.lorem.slug(),
           user: {
@@ -57956,7 +57950,7 @@ export const factories = {
     },
   '/teams/:teamId/discussions/:discussionNumber/reactions': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -57998,7 +57992,7 @@ export const factories = {
       })),
     },
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         user: {
@@ -58040,7 +58034,7 @@ export const factories = {
   },
   '/teams/:teamId/members': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         name: faker.lorem.slug(),
@@ -58065,7 +58059,7 @@ export const factories = {
         site_admin: faker.datatype.boolean(),
         starred_at: faker.lorem.slug(),
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -58074,28 +58068,28 @@ export const factories = {
     },
   },
   '/teams/:teamId/members/:username': {
-    get: { 204: null, 404: null },
+    get: { '204': null, '404': null },
     put: {
-      204: null,
-      403: {
+      '204': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: null,
-      422: null,
+      '404': null,
+      '422': null,
     },
-    delete: { 204: null, 404: null },
+    delete: { '204': null, '404': null },
   },
   '/teams/:teamId/memberships/:username': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         role: faker.random.arrayElement(['member', 'maintainer']),
         state: faker.random.arrayElement(['active', 'pending']),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -58103,25 +58097,25 @@ export const factories = {
       },
     },
     put: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         role: faker.random.arrayElement(['member', 'maintainer']),
         state: faker.random.arrayElement(['active', 'pending']),
       },
-      403: null,
-      404: {
+      '403': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: null,
+      '422': null,
     },
-    delete: { 204: null, 403: null },
+    delete: { '204': null, '403': null },
   },
   '/teams/:teamId/projects': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         owner_url: faker.lorem.slug(),
@@ -58167,7 +58161,7 @@ export const factories = {
           admin: faker.datatype.boolean(),
         },
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -58177,7 +58171,7 @@ export const factories = {
   },
   '/teams/:teamId/projects/:projectId': {
     get: {
-      200: {
+      '200': {
         owner_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         html_url: faker.lorem.slug(),
@@ -58221,21 +58215,21 @@ export const factories = {
           admin: faker.datatype.boolean(),
         },
       },
-      404: null,
+      '404': null,
     },
     put: {
-      204: null,
-      403: {
+      '204': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -58251,18 +58245,18 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      404: {
+      '204': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      415: {
+      '415': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -58280,7 +58274,7 @@ export const factories = {
   },
   '/teams/:teamId/repos': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -58674,7 +58668,7 @@ export const factories = {
         watchers: faker.datatype.number(),
         allow_forking: faker.datatype.boolean(),
       })),
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -58684,7 +58678,7 @@ export const factories = {
   },
   '/teams/:teamId/repos/:owner/:repo': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         name: faker.lorem.slug(),
@@ -59075,18 +59069,18 @@ export const factories = {
         watchers: faker.datatype.number(),
         master_branch: faker.lorem.slug(),
       },
-      204: null,
-      404: null,
+      '204': null,
+      '404': null,
     },
     put: {
-      204: null,
-      403: {
+      '204': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -59101,11 +59095,11 @@ export const factories = {
         })),
       },
     },
-    delete: { 204: null },
+    delete: { '204': null },
   },
   '/teams/:teamId/teams': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -59141,19 +59135,19 @@ export const factories = {
           ldap_dn: faker.lorem.slug(),
         },
       })),
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -59171,15 +59165,15 @@ export const factories = {
   },
   '/user': {
     get: {
-      200: null,
-      304: null,
-      401: {
+      '200': null,
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -59187,7 +59181,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         login: faker.lorem.slug(),
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
@@ -59236,26 +59230,26 @@ export const factories = {
         business_plus: faker.datatype.boolean(),
         ldap_dn: faker.lorem.slug(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -59273,7 +59267,7 @@ export const factories = {
   },
   '/user/emails': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         email: faker.internet.exampleEmail(),
@@ -59281,20 +59275,20 @@ export const factories = {
         verified: faker.datatype.boolean(),
         visibility: faker.lorem.slug(),
       })),
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -59302,7 +59296,7 @@ export const factories = {
       },
     },
     post: {
-      201: [
+      '201': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         email: faker.internet.exampleEmail(),
@@ -59310,26 +59304,26 @@ export const factories = {
         verified: faker.datatype.boolean(),
         visibility: faker.lorem.slug(),
       })),
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -59345,27 +59339,27 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      304: null,
-      401: {
+      '204': null,
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -59383,7 +59377,7 @@ export const factories = {
   },
   '/user/followers': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         name: faker.lorem.slug(),
@@ -59408,14 +59402,14 @@ export const factories = {
         site_admin: faker.datatype.boolean(),
         starred_at: faker.lorem.slug(),
       })),
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -59425,7 +59419,7 @@ export const factories = {
   },
   '/user/following': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         name: faker.lorem.slug(),
@@ -59450,14 +59444,14 @@ export const factories = {
         site_admin: faker.datatype.boolean(),
         starred_at: faker.lorem.slug(),
       })),
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -59467,21 +59461,21 @@ export const factories = {
   },
   '/user/following/:username': {
     get: {
-      204: null,
-      304: null,
-      401: {
+      '204': null,
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -59489,21 +59483,21 @@ export const factories = {
       },
     },
     put: {
-      204: null,
-      304: null,
-      401: {
+      '204': null,
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -59511,21 +59505,21 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      304: null,
-      401: {
+      '204': null,
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -59535,7 +59529,7 @@ export const factories = {
   },
   '/user/gpg_keys': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -59581,20 +59575,20 @@ export const factories = {
         expires_at: faker.date.recent(),
         raw_key: faker.lorem.slug(),
       })),
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -59602,7 +59596,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         primary_key_id: faker.datatype.number(),
         key_id: faker.lorem.slug(),
@@ -59646,26 +59640,26 @@ export const factories = {
         expires_at: faker.date.recent(),
         raw_key: faker.lorem.slug(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -59683,7 +59677,7 @@ export const factories = {
   },
   '/user/gpg_keys/:gpgKeyId': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         primary_key_id: faker.datatype.number(),
         key_id: faker.lorem.slug(),
@@ -59727,20 +59721,20 @@ export const factories = {
         expires_at: faker.date.recent(),
         raw_key: faker.lorem.slug(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -59748,27 +59742,27 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      304: null,
-      401: {
+      '204': null,
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -59786,7 +59780,7 @@ export const factories = {
   },
   '/user/installations': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         installations: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
@@ -59895,20 +59889,20 @@ export const factories = {
           contact_email: faker.lorem.slug(),
         })),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      415: {
+      '415': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
@@ -59916,7 +59910,7 @@ export const factories = {
   },
   '/user/installations/:installationId/repositories': {
     get: {
-      200: {
+      '200': {
         total_count: faker.datatype.number(),
         repository_selection: faker.lorem.slug(),
         repositories: [
@@ -60187,14 +60181,14 @@ export const factories = {
           starred_at: faker.lorem.slug(),
         })),
       },
-      304: null,
-      403: {
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -60204,15 +60198,15 @@ export const factories = {
   },
   '/user/installations/:installationId/repositories/:repositoryId': {
     put: {
-      204: null,
-      304: null,
-      403: {
+      '204': null,
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -60220,15 +60214,15 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      304: null,
-      403: {
+      '204': null,
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -60238,7 +60232,7 @@ export const factories = {
   },
   '/user/issues': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -60746,8 +60740,8 @@ export const factories = {
           rocket: faker.datatype.number(),
         },
       })),
-      304: null,
-      404: {
+      '304': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -60757,7 +60751,7 @@ export const factories = {
   },
   '/user/keys': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         key: faker.lorem.slug(),
@@ -60768,20 +60762,20 @@ export const factories = {
         verified: faker.datatype.boolean(),
         read_only: faker.datatype.boolean(),
       })),
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -60789,7 +60783,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         key: faker.lorem.slug(),
         id: faker.datatype.number(),
         url: faker.lorem.slug(),
@@ -60798,26 +60792,26 @@ export const factories = {
         verified: faker.datatype.boolean(),
         read_only: faker.datatype.boolean(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -60835,7 +60829,7 @@ export const factories = {
   },
   '/user/keys/:keyId': {
     get: {
-      200: {
+      '200': {
         key: faker.lorem.slug(),
         id: faker.datatype.number(),
         url: faker.lorem.slug(),
@@ -60844,20 +60838,20 @@ export const factories = {
         verified: faker.datatype.boolean(),
         read_only: faker.datatype.boolean(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -60865,21 +60859,21 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      304: null,
-      401: {
+      '204': null,
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -60889,7 +60883,7 @@ export const factories = {
   },
   '/user/memberships/orgs': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.internet.url(),
@@ -60937,20 +60931,20 @@ export const factories = {
           can_create_repository: faker.datatype.boolean(),
         },
       })),
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -60968,7 +60962,7 @@ export const factories = {
   },
   '/user/memberships/orgs/:org': {
     get: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         state: faker.random.arrayElement(['active', 'pending']),
         role: faker.random.arrayElement(['admin', 'member', 'billing_manager']),
@@ -61014,13 +61008,13 @@ export const factories = {
           can_create_repository: faker.datatype.boolean(),
         },
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -61028,7 +61022,7 @@ export const factories = {
       },
     },
     patch: {
-      200: {
+      '200': {
         url: faker.internet.url(),
         state: faker.random.arrayElement(['active', 'pending']),
         role: faker.random.arrayElement(['admin', 'member', 'billing_manager']),
@@ -61074,19 +61068,19 @@ export const factories = {
           can_create_repository: faker.datatype.boolean(),
         },
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -61104,7 +61098,7 @@ export const factories = {
   },
   '/user/orgs': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         login: faker.lorem.slug(),
@@ -61120,14 +61114,14 @@ export const factories = {
         avatar_url: faker.lorem.slug(),
         description: faker.lorem.slug(),
       })),
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -61137,7 +61131,7 @@ export const factories = {
   },
   '/user/projects': {
     post: {
-      201: {
+      '201': {
         owner_url: faker.internet.url(),
         url: faker.internet.url(),
         html_url: faker.internet.url(),
@@ -61181,24 +61175,24 @@ export const factories = {
         ]),
         private: faker.datatype.boolean(),
       },
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      415: {
+      '415': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -61209,7 +61203,7 @@ export const factories = {
   },
   '/user/public_emails': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         email: faker.internet.exampleEmail(),
@@ -61217,20 +61211,20 @@ export const factories = {
         verified: faker.datatype.boolean(),
         visibility: faker.lorem.slug(),
       })),
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -61240,7 +61234,7 @@ export const factories = {
   },
   '/user/repos': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -61505,20 +61499,20 @@ export const factories = {
         master_branch: faker.lorem.slug(),
         starred_at: faker.lorem.slug(),
       })),
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -61534,7 +61528,7 @@ export const factories = {
       },
     },
     post: {
-      201: {
+      '201': {
         id: faker.datatype.number(),
         node_id: faker.lorem.slug(),
         name: faker.lorem.slug(),
@@ -61797,32 +61791,32 @@ export const factories = {
         master_branch: faker.lorem.slug(),
         starred_at: faker.lorem.slug(),
       },
-      304: null,
-      400: {
+      '304': null,
+      '400': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      401: {
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -61840,7 +61834,7 @@ export const factories = {
   },
   '/user/repository_invitations': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -62297,20 +62291,20 @@ export const factories = {
         html_url: faker.lorem.slug(),
         node_id: faker.lorem.slug(),
       })),
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -62320,21 +62314,21 @@ export const factories = {
   },
   '/user/repository_invitations/:invitationId': {
     patch: {
-      204: null,
-      304: null,
-      403: {
+      '204': null,
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      409: {
+      '409': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -62342,21 +62336,21 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      304: null,
-      403: {
+      '204': null,
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      409: {
+      '409': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -62366,7 +62360,7 @@ export const factories = {
   },
   '/user/starred': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -62631,14 +62625,14 @@ export const factories = {
         master_branch: faker.lorem.slug(),
         starred_at: faker.lorem.slug(),
       })),
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -62648,21 +62642,21 @@ export const factories = {
   },
   '/user/starred/:owner/:repo': {
     get: {
-      204: null,
-      304: null,
-      401: {
+      '204': null,
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -62670,21 +62664,21 @@ export const factories = {
       },
     },
     put: {
-      204: null,
-      304: null,
-      401: {
+      '204': null,
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -62692,21 +62686,21 @@ export const factories = {
       },
     },
     delete: {
-      204: null,
-      304: null,
-      401: {
+      '204': null,
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -62716,7 +62710,7 @@ export const factories = {
   },
   '/user/subscriptions': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -63110,14 +63104,14 @@ export const factories = {
         watchers: faker.datatype.number(),
         allow_forking: faker.datatype.boolean(),
       })),
-      304: null,
-      401: {
+      '304': null,
+      '401': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      403: {
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -63127,7 +63121,7 @@ export const factories = {
   },
   '/user/teams': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -63216,14 +63210,14 @@ export const factories = {
         },
         ldap_dn: faker.lorem.slug(),
       })),
-      304: null,
-      403: {
+      '304': null,
+      '403': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -63233,7 +63227,7 @@ export const factories = {
   },
   '/users': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         name: faker.lorem.slug(),
@@ -63258,13 +63252,13 @@ export const factories = {
         site_admin: faker.datatype.boolean(),
         starred_at: faker.lorem.slug(),
       })),
-      304: null,
+      '304': null,
     },
   },
   '/users/:username': {
     get: {
-      200: null,
-      404: {
+      '200': null,
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
@@ -63274,7 +63268,7 @@ export const factories = {
   },
   '/users/:username/events': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.lorem.slug(),
@@ -63940,7 +63934,7 @@ export const factories = {
   },
   '/users/:username/events/orgs/:org': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.lorem.slug(),
@@ -64606,7 +64600,7 @@ export const factories = {
   },
   '/users/:username/events/public': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.lorem.slug(),
@@ -65272,7 +65266,7 @@ export const factories = {
   },
   '/users/:username/followers': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         name: faker.lorem.slug(),
@@ -65301,7 +65295,7 @@ export const factories = {
   },
   '/users/:username/following': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         name: faker.lorem.slug(),
@@ -65328,10 +65322,12 @@ export const factories = {
       })),
     },
   },
-  '/users/:username/following/:targetUser': { get: { 204: null, 404: null } },
+  '/users/:username/following/:targetUser': {
+    get: { '204': null, '404': null },
+  },
   '/users/:username/gists': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         url: faker.internet.url(),
@@ -65413,7 +65409,7 @@ export const factories = {
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => null),
       })),
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -65431,7 +65427,7 @@ export const factories = {
   },
   '/users/:username/gpg_keys': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -65481,7 +65477,7 @@ export const factories = {
   },
   '/users/:username/hovercard': {
     get: {
-      200: {
+      '200': {
         contexts: [
           ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
         ].map(_ => ({
@@ -65489,13 +65485,13 @@ export const factories = {
           octicon: faker.lorem.slug(),
         })),
       },
-      404: {
+      '404': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         url: faker.lorem.slug(),
         status: faker.lorem.slug(),
       },
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -65513,7 +65509,7 @@ export const factories = {
   },
   '/users/:username/installation': {
     get: {
-      200: {
+      '200': {
         id: faker.datatype.number(),
         account: null,
         repository_selection: faker.random.arrayElement(['all', 'selected']),
@@ -65614,7 +65610,7 @@ export const factories = {
   },
   '/users/:username/keys': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -65624,7 +65620,7 @@ export const factories = {
   },
   '/users/:username/orgs': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         login: faker.lorem.slug(),
@@ -65644,7 +65640,7 @@ export const factories = {
   },
   '/users/:username/projects': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         owner_url: faker.internet.url(),
@@ -65690,7 +65686,7 @@ export const factories = {
         ]),
         private: faker.datatype.boolean(),
       })),
-      422: {
+      '422': {
         message: faker.lorem.slug(),
         documentation_url: faker.lorem.slug(),
         errors: [
@@ -65708,7 +65704,7 @@ export const factories = {
   },
   '/users/:username/received_events': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.lorem.slug(),
@@ -66374,7 +66370,7 @@ export const factories = {
   },
   '/users/:username/received_events/public': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.lorem.slug(),
@@ -67040,7 +67036,7 @@ export const factories = {
   },
   '/users/:username/repos': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -67436,11 +67432,14 @@ export const factories = {
       })),
     },
   },
-  '/users/:username/site_admin': { put: { 204: null }, delete: { 204: null } },
-  '/users/:username/starred': { get: { 200: null } },
+  '/users/:username/site_admin': {
+    put: { '204': null },
+    delete: { '204': null },
+  },
+  '/users/:username/starred': { get: { '200': null } },
   '/users/:username/subscriptions': {
     get: {
-      200: [
+      '200': [
         ...new Array(faker.datatype.number({ max: MAX_ARRAY_LENGTH })).keys(),
       ].map(_ => ({
         id: faker.datatype.number(),
@@ -67836,6 +67835,9 @@ export const factories = {
       })),
     },
   },
-  '/users/:username/suspended': { put: { 204: null }, delete: { 204: null } },
-  '/zen': { get: { 200: null } },
+  '/users/:username/suspended': {
+    put: { '204': null },
+    delete: { '204': null },
+  },
+  '/zen': { get: { '200': null } },
 };

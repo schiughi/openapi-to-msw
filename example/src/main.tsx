@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { setupWorker } from 'msw';
+import { setupWorker, RequestHandler } from 'msw';
 import { getHandlers } from 'openapi-to-msw';
 
 import './index.css';
@@ -8,7 +8,12 @@ import App from './App';
 import { factories } from './mock';
 
 const startWorker = () => {
-  const worker = setupWorker(getHandlers(factories, { statusCode: 'success' }));
+  const worker = setupWorker(
+    // @ts-expect-error
+    getHandlers(factories, {
+      statusCode: 'success',
+    })
+  );
   worker.start();
 };
 
