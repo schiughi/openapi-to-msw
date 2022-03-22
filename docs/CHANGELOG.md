@@ -1,3 +1,10 @@
+## [1.1.13](https://github.com/schiughi/openapi-to-msw/compare/1.1.12...1.1.13) (2022-03-22)
+
+
+### Bug Fixes
+
+* **@faker-js/faker:** remove "eslint-disable" comment from mock template ([bb20161](https://github.com/schiughi/openapi-to-msw/commit/bb201616bfd0133317b6c6da7e841150817d5b1a))
+
 ## [1.1.12](https://github.com/schiughi/openapi-to-msw/compare/1.1.11...1.1.12) (2022-03-16)
 
 
