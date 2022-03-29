@@ -7,7 +7,7 @@ importers:
       '@apidevtools/swagger-parser': ^10.0.3
       '@semantic-release/changelog': 6.0.1
       '@semantic-release/git': 10.0.1
-      '@types/lodash': 4.14.180
+      '@types/lodash': 4.14.181
       '@types/node': 17.0.21
       '@types/prettier': 2.4.4
       cac: ^6.7.12
@@ -35,7 +35,7 @@ importers:
     devDependencies:
       '@semantic-release/changelog': 6.0.1_semantic-release@19.0.2
       '@semantic-release/git': 10.0.1_semantic-release@19.0.2
-      '@types/lodash': 4.14.180
+      '@types/lodash': 4.14.181
       '@types/node': 17.0.21
       '@types/prettier': 2.4.4
       commitizen: 4.2.4
@@ -830,8 +830,8 @@ packages:
     resolution: {integrity: sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ==}
     dev: false
 
-  /@types/lodash/4.14.180:
-    resolution: {integrity: sha512-XOKXa1KIxtNXgASAnwj7cnttJxS4fksBRywK/9LzRV5YxrF80BXZIGeQSuoESQ/VkUj30Ae0+YcuHc15wJCB2g==}
+  /@types/lodash/4.14.181:
+    resolution: {integrity: sha512-n3tyKthHJbkiWhDZs3DkhkCzt2MexYHXlX0td5iMplyfwketaOeKboEVBqzceH7juqvEg3q5oUoBFxSLu7zFag==}
     dev: true
 
   /@types/minimist/1.2.2:
