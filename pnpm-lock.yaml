@@ -18,7 +18,7 @@ importers:
       npm-run-all: 4.1.5
       oazapfts: ^3.5.0
       openapi-types: 10.0.0
-      prettier: 2.5.1
+      prettier: 2.6.2
       rimraf: 3.0.2
       semantic-release: 19.0.2
       swagger2openapi: ^7.0.8
@@ -30,7 +30,7 @@ importers:
       cac: 6.7.12
       msw: 0.39.1
       oazapfts: 3.5.0_openapi-types@10.0.0
-      prettier: 2.5.1
+      prettier: 2.6.2
       swagger2openapi: 7.0.8
     devDependencies:
       '@semantic-release/changelog': 6.0.1_semantic-release@19.0.2
@@ -3503,8 +3503,8 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /prettier/2.5.1:
-    resolution: {integrity: sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==}
+  /prettier/2.6.2:
+    resolution: {integrity: sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: false
