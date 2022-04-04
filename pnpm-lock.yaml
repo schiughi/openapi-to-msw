@@ -51,7 +51,7 @@ importers:
 
   example:
     specifiers:
-      '@faker-js/faker': 6.1.1
+      '@faker-js/faker': 6.1.2
       '@vitejs/plugin-react': 1.2.0
       msw: 0.39.2
       openapi-to-msw: workspace:^1.1.12
@@ -64,7 +64,7 @@ importers:
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     devDependencies:
-      '@faker-js/faker': 6.1.1
+      '@faker-js/faker': 6.1.2
       '@vitejs/plugin-react': 1.2.0
       msw: 0.39.2
       typescript: 4.6.3
@@ -448,9 +448,9 @@ packages:
     resolution: {integrity: sha512-dDnQizD94EdBwEj/fh3zPRa/HWCS9O5au2PuHhZBbuM3xWHxuaKzPBOEWze7Nn0xW68MIpZ7Xdyn1CoCpjKCuQ==}
     dev: false
 
-  /@faker-js/faker/6.1.1:
-    resolution: {integrity: sha512-8yq1LJVGn4GY06riLddIU1LbJm15yjt46hjfkpWNpH/mqdciPOBVzicKOJxzQNrGgVHVBxcdm7sgwjI/Y19MYw==}
-    engines: {node: '>=14.0.0', npm: '>=7.0.0'}
+  /@faker-js/faker/6.1.2:
+    resolution: {integrity: sha512-QSvmexHCxeRUk1/yKmoEDaWB5Hohjvtim5g2JJwy8S/l0L4b3y/GxSpE6vN4SBoVGGahEQW21uqyRr7EofI35A==}
+    engines: {node: '>=14.0.0', npm: '>=6.0.0'}
     dev: true
 
   /@jridgewell/resolve-uri/3.0.5:
