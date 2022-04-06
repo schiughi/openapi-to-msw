@@ -1,3 +1,10 @@
+## [1.1.14](https://github.com/schiughi/openapi-to-msw/compare/1.1.13...1.1.14) (2022-04-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency prettier to v2.6.2 ([fb61cbf](https://github.com/schiughi/openapi-to-msw/commit/fb61cbff69939ca82527ed8d37fdc0b92ce7395a))
+
 ## [1.1.13](https://github.com/schiughi/openapi-to-msw/compare/1.1.12...1.1.13) (2022-03-22)
 
 
