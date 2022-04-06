@@ -34,7 +34,7 @@
     "cac": "^6.7.12",
     "msw": "^0.39.0",
     "oazapfts": "^3.5.0",
-    "prettier": "2.5.1",
+    "prettier": "2.6.2",
     "swagger2openapi": "^7.0.8"
   },
   "devDependencies": {
