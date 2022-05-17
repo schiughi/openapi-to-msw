@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 importers:
 
@@ -51,7 +51,7 @@ importers:
 
   example:
     specifiers:
-      '@faker-js/faker': 6.1.2
+      '@faker-js/faker': 6.3.1
       '@vitejs/plugin-react': 1.3.1
       msw: 0.39.2
       openapi-to-msw: workspace:^1.1.12
@@ -64,7 +64,7 @@ importers:
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
     devDependencies:
-      '@faker-js/faker': 6.1.2
+      '@faker-js/faker': 6.3.1
       '@vitejs/plugin-react': 1.3.1
       msw: 0.39.2
       typescript: 4.6.3
@@ -391,7 +391,7 @@ packages:
       '@types/node': 17.0.21
       chalk: 4.1.1
       cosmiconfig: 7.0.1
-      cosmiconfig-typescript-loader: 1.0.6_f01b7c141b75a45db67b7d9ae4c261df
+      cosmiconfig-typescript-loader: 1.0.6_6anxyfa3owsf3nt3pwnojqtb34
       lodash: 4.17.21
       resolve-from: 5.0.0
       typescript: 4.6.3
@@ -440,8 +440,8 @@ packages:
     resolution: {integrity: sha512-dDnQizD94EdBwEj/fh3zPRa/HWCS9O5au2PuHhZBbuM3xWHxuaKzPBOEWze7Nn0xW68MIpZ7Xdyn1CoCpjKCuQ==}
     dev: false
 
-  /@faker-js/faker/6.1.2:
-    resolution: {integrity: sha512-QSvmexHCxeRUk1/yKmoEDaWB5Hohjvtim5g2JJwy8S/l0L4b3y/GxSpE6vN4SBoVGGahEQW21uqyRr7EofI35A==}
+  /@faker-js/faker/6.3.1:
+    resolution: {integrity: sha512-8YXBE2ZcU/pImVOHX7MWrSR/X5up7t6rPWZlk34RwZEcdr3ua6X+32pSd6XuOQRN+vbuvYNfA6iey8NbrjuMFQ==}
     engines: {node: '>=14.0.0', npm: '>=6.0.0'}
     dev: true
 
@@ -1376,7 +1376,7 @@ packages:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
     dev: true
 
-  /cosmiconfig-typescript-loader/1.0.6_f01b7c141b75a45db67b7d9ae4c261df:
+  /cosmiconfig-typescript-loader/1.0.6_6anxyfa3owsf3nt3pwnojqtb34:
     resolution: {integrity: sha512-2nEotziYJWtNtoTjKbchj9QrdTT6DBxCvqjNKoDKARw+e2yZmTQCa07uRrykLIZuvSgp69YXLH89UHc0WhdMfQ==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -1385,7 +1385,7 @@ packages:
     dependencies:
       '@types/node': 17.0.21
       cosmiconfig: 7.0.1
-      ts-node: 10.6.0_f01b7c141b75a45db67b7d9ae4c261df
+      ts-node: 10.6.0_6anxyfa3owsf3nt3pwnojqtb34
       typescript: 4.6.3
     transitivePeerDependencies:
       - '@swc/core'
@@ -4250,7 +4250,7 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: true
 
-  /ts-node/10.6.0_f01b7c141b75a45db67b7d9ae4c261df:
+  /ts-node/10.6.0_6anxyfa3owsf3nt3pwnojqtb34:
     resolution: {integrity: sha512-CJen6+dfOXolxudBQXnVjRVvYTmTWbyz7cn+xq2XTsvnaXbHqr4gXSCNbS2Jj8yTZMuGwUoBESLaOkLascVVvg==}
     hasBin: true
     peerDependencies:
