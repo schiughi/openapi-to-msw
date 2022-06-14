@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "openapi-to-msw": "workspace:^1.1.12",
-    "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@faker-js/faker": "6.3.1",
