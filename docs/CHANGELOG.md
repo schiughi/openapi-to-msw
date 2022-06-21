@@ -1,3 +1,10 @@
+## [1.1.16](https://github.com/schiughi/openapi-to-msw/compare/1.1.15...1.1.16) (2022-06-21)
+
+
+### Bug Fixes
+
+* **deps:** update react monorepo to v18.2.0 ([9b3f836](https://github.com/schiughi/openapi-to-msw/commit/9b3f8364db68d6d1a1c93506d176653d83069b77))
+
 ## [1.1.15](https://github.com/schiughi/openapi-to-msw/compare/1.1.14...1.1.15) (2022-04-15)
 
 
