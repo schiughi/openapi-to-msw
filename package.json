@@ -32,7 +32,7 @@
   "dependencies": {
     "@apidevtools/swagger-parser": "^10.0.3",
     "cac": "^6.7.12",
-    "msw": "^0.39.0",
+    "msw": "^0.49.0",
     "oazapfts": "^3.5.0",
     "prettier": "2.6.2",
     "swagger2openapi": "^7.0.8"
